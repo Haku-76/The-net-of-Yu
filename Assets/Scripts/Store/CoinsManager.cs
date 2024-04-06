@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -6,19 +6,19 @@ using UnityEngine;
 public class CoinsManager : MonoBehaviour
 {
     [SerializeField] private StorePurchase purchase;
-    [Header("²âÊÔÓÃ¶Ë¿Ú£ºÓ²±ÒÊıÁ¿")][SerializeField] private int coins;
+    [Header("æµ‹è¯•ç”¨ç«¯å£ï¼šç¡¬å¸æ•°é‡")][SerializeField] private int coins;
     [SerializeField] private TextMeshProUGUI coinText;
 
     private void Start()
     {
-        //Ôö¼Ó¶©ÔÄ
+        //å¢åŠ è®¢é˜…
         if (purchase != null)
         {
             purchase.OnPurchase += coinsChanged;
         }
     }
 
-    //¼àÌı£¬µ±·¢Éú±ÒÁ¿±ä»¯Ê±
+    //ç›‘å¬ï¼Œå½“å‘ç”Ÿå¸é‡å˜åŒ–æ—¶
     private void coinsChanged(int newcoins)
     {
         coins = newcoins;

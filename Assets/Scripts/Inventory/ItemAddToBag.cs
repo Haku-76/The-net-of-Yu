@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemOpenWorld : MonoBehaviour
+public class ItemAddToBag : MonoBehaviour
 {
     public Item thisItem;
     public Inventory playerInventory;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Lord"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             AddNewItem();
             Destroy(this.gameObject);
@@ -21,13 +21,14 @@ public class ItemOpenWorld : MonoBehaviour
         if (!playerInventory.itemList.Contains(thisItem))
         {
             playerInventory.itemList.Add(thisItem);
-            //InventoryManager.CreateNewItem(thisItem);
+            thisItem.itemHeld += 1;
         }
         else
         {
             thisItem.itemHeld += 1;
         }
 
-        InventoryManager.RefreshItem();
+        InventoryManager.RefreshAllBags();
+        //InventoryManager.RefreshItem();
     }
 }

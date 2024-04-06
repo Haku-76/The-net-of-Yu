@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Collections.LowLevel.Unsafe;
@@ -10,7 +10,7 @@ public class StorePurchase : MonoBehaviour
 {
     public event CoinsChangedDelegate OnPurchase;
     private NetState netState = new NetState();
-    [Header("²âÊÔÓÃ¶Ë¿Ú£ºÓ²±ÒÊıÁ¿")][SerializeField]private int coins  = 150;
+    [Header("æµ‹è¯•ç”¨ç«¯å£ï¼šç¡¬å¸æ•°é‡")][SerializeField]private int coins  = 150;
     private void Awake()
     {
         
@@ -24,7 +24,7 @@ public class StorePurchase : MonoBehaviour
         }
         else
         {
-            print("Ã»ÓĞ×ã¹»µÄ½ğ±Ò");
+            print("æ²¡æœ‰è¶³å¤Ÿçš„é‡‘å¸");
         }
         coins = newcoins;
         netState.SpeedLevel++;

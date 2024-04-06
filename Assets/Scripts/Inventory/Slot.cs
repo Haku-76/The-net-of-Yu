@@ -6,7 +6,8 @@ public class Slot : MonoBehaviour
 {
     public Item slotItem;
     public Image slotImage;
-    public TextMeshProUGUI slotNumber;
+    public TextMeshProUGUI slotName;
+    public TextMeshProUGUI slotAmount;
 
     public void ItemOnClicked()
     {

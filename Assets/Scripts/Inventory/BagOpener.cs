@@ -4,12 +4,6 @@ public class BagOpener : MonoBehaviour
 {
     public GameObject myBag;
     public bool isBagOpen;
-
-    void Start()
-    {
-        
-    }
-
     
     void Update()
     {

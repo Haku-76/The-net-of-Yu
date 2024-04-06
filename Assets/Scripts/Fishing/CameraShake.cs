@@ -1,4 +1,4 @@
-using Cinemachine;
+ï»¿using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,11 +21,11 @@ public class CameraShake : MonoBehaviour
     }
 
     /// <summary>
-    /// ÕğÆÁ
+    /// éœ‡å±
     /// </summary>
-    /// <param name="duration">Ê±³¤</param>
-    /// <param name="amplitude">·ù¶È</param>
-    /// <param name="frequency">ÆµÂÊ</param>
+    /// <param name="duration">æ—¶é•¿</param>
+    /// <param name="amplitude">å¹…åº¦</param>
+    /// <param name="frequency">é¢‘ç‡</param>
     public void CameraShaking()
     {
         if (noiseProfile != null)
@@ -37,7 +37,7 @@ public class CameraShake : MonoBehaviour
     }
 
     /// <summary>
-    /// Í£Ö¹ÕğÆÁ
+    /// åœæ­¢éœ‡å±
     /// </summary>
     private void StopShaking()
     {
