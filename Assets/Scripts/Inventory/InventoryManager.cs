@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -16,8 +16,8 @@ public class InventoryManager : MonoBehaviour
     public GameObject toolSlotGrid;
     public Inventory resourceBag;
     public GameObject resourceSlotGrid;
-    public Inventory rubbishBag;
-    public GameObject rubbishSlotGrid;
+    public Inventory garbageBag;
+    public GameObject garbageSlotGrid;
 
     [Space(10)]
     public Slot slotPrefab;
@@ -83,7 +83,7 @@ public class InventoryManager : MonoBehaviour
         RefreshBag(instance.fishBag, instance.fishSlotGrid);
         RefreshBag(instance.toolBag, instance.toolSlotGrid);
         RefreshBag(instance.resourceBag, instance.resourceSlotGrid);
-        RefreshBag(instance.rubbishBag, instance.rubbishSlotGrid);
+        RefreshBag(instance.garbageBag, instance.garbageSlotGrid);
     }
 
     //public static void RefreshItem()

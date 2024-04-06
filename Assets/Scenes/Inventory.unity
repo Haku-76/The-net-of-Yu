@@ -1645,8 +1645,8 @@ MonoBehaviour:
   toolSlotGrid: {fileID: 1131322257}
   resourceBag: {fileID: 11400000, guid: 5eed8e50464f763499e5cf30195d5712, type: 2}
   resourceSlotGrid: {fileID: 1723762755}
-  rubbishBag: {fileID: 11400000, guid: 86b56b719a5cf564da5909cade160059, type: 2}
-  rubbishSlotGrid: {fileID: 1425503738}
+  garbageBag: {fileID: 11400000, guid: 86b56b719a5cf564da5909cade160059, type: 2}
+  garbageSlotGrid: {fileID: 1425503738}
   slotPrefab: {fileID: 2825675337869650885, guid: 855e16404b6e03c4eb3c661f49b2f92d, type: 3}
   itemInformation: {fileID: 0}
 --- !u!1 &1103419308
