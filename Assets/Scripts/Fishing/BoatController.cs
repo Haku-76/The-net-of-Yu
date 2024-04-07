@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BoatController : MonoBehaviour
 {
+    public static BoatController Instance { get; private set; }
     private Rigidbody2D rb;
     [SerializeField]
     private float moveSpeed=5;
@@ -16,6 +17,10 @@ public class BoatController : MonoBehaviour
     private bool isCollidering;
     [SerializeField]
     private CameraShake cameraShake;
+    private void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
