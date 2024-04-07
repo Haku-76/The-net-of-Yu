@@ -27,13 +27,27 @@ public class FishController : MonoBehaviour
     }
     void Update()
     {
+        switch (state)
+        {
+            case FishState.Normal:
                 timer += Time.deltaTime;
-                rb.velocity=transform.up*speed;
+                rb.velocity = transform.up * speed;
                 if (timer > maxTime)
                 {
                     RandomTarget();
                     timer = 0;
                 }
+                break;
+            case FishState.Scared:
+                timer += Time.deltaTime;
+                if (timer > maxTime)
+                {
+                    state = FishState.Normal;
+                    timer = 0;
+                }
+                break;
+        }
+
     }
     private void RandomTarget()
     {
@@ -48,13 +62,29 @@ public class FishController : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        transform.eulerAngles += new Vector3(0, 0, 180);
+        if (state == FishState.Normal)
+        {
+            transform.eulerAngles += new Vector3(0, 0, 180);
+        }
+        else
+        {
+            transform.eulerAngles += new Vector3(0, 0, 180);
+            rb.velocity = -rb.velocity;
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag=="FishArea")
         {
-            transform.eulerAngles += new Vector3(0, 0, 180);
+            if (state == FishState.Normal)
+            {
+                transform.eulerAngles += new Vector3(0, 0, 180);
+            }
+            else
+            {
+                transform.eulerAngles += new Vector3(0, 0, 180);
+                rb.velocity=-rb.velocity;
+            }
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -63,11 +93,13 @@ public class FishController : MonoBehaviour
         {
             TurnToScared();
             rb.velocity=(transform.position-collision.transform.position).normalized*5;
+            transform.eulerAngles =new Vector3(0,0, Vector3.SignedAngle(collision.transform.position, transform.position, Vector3.forward));
             Debug.Log(rb.velocity.magnitude);
         }
     }
     private void TurnToScared()
     {
+        state=FishState.Scared;
         Timer = 3;
         rb.angularVelocity = 0;
     }
