@@ -61,9 +61,9 @@ public class FishController : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Debug.Log(11);
             TurnToScared();
             rb.velocity=(transform.position-collision.transform.position).normalized*5;
+            Debug.Log(rb.velocity.magnitude);
         }
     }
     private void TurnToScared()
