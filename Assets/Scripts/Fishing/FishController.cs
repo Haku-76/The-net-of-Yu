@@ -27,9 +27,6 @@ public class FishController : MonoBehaviour
     }
     void Update()
     {
-        switch (state)
-        {
-            case FishState.Normal:
                 timer += Time.deltaTime;
                 rb.velocity=transform.up*speed;
                 if (timer > maxTime)
@@ -37,10 +34,6 @@ public class FishController : MonoBehaviour
                     RandomTarget();
                     timer = 0;
                 }
-                break;
-            case FishState.Scared: 
-                break;
-        }
     }
     private void RandomTarget()
     {
@@ -59,13 +52,18 @@ public class FishController : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        transform.eulerAngles += new Vector3(0, 0, 180);
+        if (collision.tag=="FishArea")
+        {
+            transform.eulerAngles += new Vector3(0, 0, 180);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
+            Debug.Log(11);
             TurnToScared();
+            rb.velocity=(transform.position-collision.transform.position).normalized*5;
         }
     }
     private void TurnToScared()
