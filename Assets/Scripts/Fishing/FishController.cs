@@ -38,8 +38,6 @@ public class FishController : MonoBehaviour
                     timer = 0;
                 }
                 break;
-            case FishState.Outarea: 
-                break;
             case FishState.Scared: 
                 break;
         }
@@ -48,7 +46,12 @@ public class FishController : MonoBehaviour
     {
         Timer=Random.Range(minTime, maxTime);
         speed=Random.Range(minSpeed, maxSpeed);
-        rb.angularVelocity=Random.Range(minRotate, maxRotate);
+        float rotateSp=Random.Range(minRotate, maxRotate);
+        if (rotateSp > 20|| rotateSp <-20)
+        {
+            rotateSp = 0;
+        }
+        rb.angularVelocity = rotateSp;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -58,10 +61,21 @@ public class FishController : MonoBehaviour
     {
         transform.eulerAngles += new Vector3(0, 0, 180);
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            TurnToScared();
+        }
+    }
+    private void TurnToScared()
+    {
+        Timer = 3;
+        rb.angularVelocity = 0;
+    }
 }
 public enum FishState
 {
     Normal,
-    Outarea,
     Scared
 }
