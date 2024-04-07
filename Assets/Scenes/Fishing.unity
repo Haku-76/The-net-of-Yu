@@ -550,6 +550,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cad078a264d51c4288f1f339fb9fff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxSpeed: 5
+  minSpeed: 2
+  maxRotate: -40
+  minRotate: 40
+  maxTime: 5
+  minTime: 3
 --- !u!1 &586958350
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,8 +1087,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 889565442}
-  - component: {fileID: 889565443}
   - component: {fileID: 889565444}
+  - component: {fileID: 889565445}
   m_Layer: 0
   m_Name: FishArea
   m_TagString: FishArea
@@ -1106,8 +1112,21 @@ Transform:
   - {fileID: 481753741}
   m_Father: {fileID: 1177131694}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &889565443
-PolygonCollider2D:
+--- !u!114 &889565444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889565441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4042d5970e6cbe04099e430803158ec6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishControllers: []
+--- !u!61 &889565445
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1148,31 +1167,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0, y: 1}
-      - {x: -5.985572, y: -2.7836192}
-      - {x: -15.115956, y: -2.247448}
-      - {x: -15.092739, y: -9.87104}
-      - {x: 15.084877, y: -9.837872}
-      - {x: 15.115959, y: 13.215706}
-      - {x: -15.18386, y: 13.083981}
-      - {x: -15.293753, y: 8.672829}
-      - {x: 0.30376148, y: 4.624317}
-  m_UseDelaunayMesh: 0
---- !u!114 &889565444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 889565441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4042d5970e6cbe04099e430803158ec6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fishControllers: []
+  serializedVersion: 2
+  m_Size: {x: 30.226517, y: 24.067268}
+  m_EdgeRadius: 0
 --- !u!1 &964593509
 GameObject:
   m_ObjectHideFlags: 0
