@@ -24,10 +24,10 @@ public class FishController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        RandomTarget();
     }
     void Update()
     {
-        Debug.Log(isScared);
         timer += Time.deltaTime;
         rb.velocity = transform.up * speed;
         if (timer > maxTime)
@@ -72,8 +72,11 @@ public class FishController : MonoBehaviour
     {
         if (collision.tag == "FishArea")
         {
-            transform.eulerAngles += new Vector3(0, 0, 180);
-            rb.angularVelocity = -rb.angularVelocity;
+            if (gameObject.activeInHierarchy)
+            {
+                transform.eulerAngles += new Vector3(0, 0, 180);
+                rb.angularVelocity = -rb.angularVelocity;
+            }
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -93,6 +96,6 @@ public class FishController : MonoBehaviour
         Timer = 3;
         rb.angularVelocity = 0;
         speed = 7;
-        transform.eulerAngles = new Vector3(0, 0, Vector3.SignedAngle(BoatController.Instance.transform.up, transform.position- BoatController.Instance.transform.position, Vector3.forward));
+        transform.eulerAngles = new Vector3(0, 0, Vector3.SignedAngle(Vector3.up, transform.position- BoatController.Instance.transform.position, Vector3.forward));
     }
 }
