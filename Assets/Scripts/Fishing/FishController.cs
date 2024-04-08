@@ -63,11 +63,6 @@ public class FishController : MonoBehaviour
         }
         rb.angularVelocity = rotateSp;
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        transform.eulerAngles += new Vector3(0, 0, 180);
-        rb.angularVelocity = 0;
-    }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "FishArea")
