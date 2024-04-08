@@ -613,7 +613,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1325,8 +1325,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishControllers: []
---- !u!61 &889565445
-BoxCollider2D:
+--- !u!60 &889565445
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1367,9 +1367,19 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 30.226517, y: 24.067268}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -12.84546, y: 24.80415}
+      - {x: -12.406515, y: 9.493935}
+      - {x: -2.0890818, y: 7.535145}
+      - {x: 2.4793634, y: 3.1812897}
+      - {x: -0.8500514, y: -1.0981143}
+      - {x: -10.7146845, y: -5.643257}
+      - {x: -13.154225, y: -5.603634}
+      - {x: -13.042241, y: -14.801472}
+      - {x: 13.340177, y: -14.644945}
+      - {x: 12.878433, y: 25.05978}
+  m_UseDelaunayMesh: 0
 --- !u!1 &964593509
 GameObject:
   m_ObjectHideFlags: 0
@@ -2627,7 +2637,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 3
 --- !u!1 &1890575551
 GameObject:
   m_ObjectHideFlags: 0

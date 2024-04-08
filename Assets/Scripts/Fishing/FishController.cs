@@ -6,7 +6,7 @@ public class FishController : MonoBehaviour
 {
     [SerializeField]
     private float maxSpeed;
-    [SerializeField]    
+    [SerializeField]
     private float minSpeed;
     [SerializeField]
     private float maxRotate;
@@ -20,41 +20,44 @@ public class FishController : MonoBehaviour
     private float Timer = 0;
     private float timer = 0;
     private Rigidbody2D rb;
-    private FishState state = FishState.Normal;
+    private bool isScared = false;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
     void Update()
     {
-        switch (state)
+        Debug.Log(isScared);
+        timer += Time.deltaTime;
+        rb.velocity = transform.up * speed;
+        if (timer > maxTime)
         {
-            case FishState.Normal:
-                timer += Time.deltaTime;
-                rb.velocity = transform.up * speed;
-                if (timer > maxTime)
+            if (isScared)
+            {
+                if ((transform.position - BoatController.Instance.transform.position).magnitude > 3)
                 {
+                    isScared = false;
                     RandomTarget();
                     timer = 0;
                 }
-                break;
-            case FishState.Scared:
-                timer += Time.deltaTime;
-                if (timer > maxTime)
+                else
                 {
-                    state = FishState.Normal;
-                    timer = 0;
+                    FishScared();
                 }
-                break;
+            }
+            else
+            {
+                RandomTarget();
+                timer = 0;
+            }
         }
-
     }
     private void RandomTarget()
     {
-        Timer=Random.Range(minTime, maxTime);
-        speed=Random.Range(minSpeed, maxSpeed);
-        float rotateSp=Random.Range(minRotate, maxRotate);
-        if (rotateSp > 20|| rotateSp <-20)
+        Timer = Random.Range(minTime, maxTime);
+        speed = Random.Range(minSpeed, maxSpeed);
+        float rotateSp = Random.Range(minRotate, maxRotate);
+        if (rotateSp > 20 || rotateSp < -20)
         {
             rotateSp = 0;
         }
@@ -62,50 +65,34 @@ public class FishController : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (state == FishState.Normal)
-        {
-            transform.eulerAngles += new Vector3(0, 0, 180);
-        }
-        else
-        {
-            transform.eulerAngles += new Vector3(0, 0, 180);
-            rb.velocity = -rb.velocity;
-        }
+        transform.eulerAngles += new Vector3(0, 0, 180);
+        rb.angularVelocity = 0;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag=="FishArea")
+        if (collision.tag == "FishArea")
         {
-            if (state == FishState.Normal)
-            {
-                transform.eulerAngles += new Vector3(0, 0, 180);
-            }
-            else
-            {
-                transform.eulerAngles += new Vector3(0, 0, 180);
-                rb.velocity=-rb.velocity;
-            }
+            transform.eulerAngles += new Vector3(0, 0, 180);
+            rb.angularVelocity = -rb.angularVelocity;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            TurnToScared();
-            rb.velocity=(transform.position-collision.transform.position).normalized*5;
-            transform.eulerAngles =new Vector3(0,0, Vector3.SignedAngle(collision.transform.position, transform.position, Vector3.forward));
-            Debug.Log(rb.velocity.magnitude);
+            if (!isScared)
+            {
+                FishScared();
+            }
         }
     }
-    private void TurnToScared()
+    private void FishScared()
     {
-        state=FishState.Scared;
+        isScared = true;
+        timer = 0;
         Timer = 3;
         rb.angularVelocity = 0;
+        speed = 7;
+        transform.eulerAngles = new Vector3(0, 0, Vector3.SignedAngle(BoatController.Instance.transform.up, transform.position- BoatController.Instance.transform.position, Vector3.forward));
     }
-}
-public enum FishState
-{
-    Normal,
-    Scared
 }
