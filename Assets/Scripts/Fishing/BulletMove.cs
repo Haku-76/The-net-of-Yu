@@ -6,6 +6,7 @@ public class BulletMove : MonoBehaviour
 {
     [SerializeField]
     private float Speed;
+    
     void Start()
     {
         
@@ -16,6 +17,6 @@ public class BulletMove : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        transform.Translate(transform.up*Speed*Time.fixedDeltaTime,Space.Self);
+        transform.Translate(transform.up*Speed*Time.fixedDeltaTime,Space.World);
     }
 }

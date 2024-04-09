@@ -17,6 +17,8 @@ public class BoatController : MonoBehaviour
     private bool isCollidering;
     [SerializeField]
     private CameraShake cameraShake;
+    [SerializeField]
+    private GameObject Bullet;
     private void Awake()
     {
         Instance = this;
@@ -70,7 +72,7 @@ public class BoatController : MonoBehaviour
             attackRange.SetActive(true);
             if (Input.GetMouseButtonDown(0))
             {
-
+                GameObject.Instantiate(Bullet, firePos.position, firePos.rotation);
             }
         }
         else
