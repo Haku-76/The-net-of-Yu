@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: "\u91D1\u5C5E"
   m_EditorClassIdentifier: 
   itemName: "\u91D1\u5C5E"
-  itemImage: {fileID: 0}
-  itemHeld: 0
+  itemImage: {fileID: 21300000, guid: aa337be5fa056214da2550ecb250a9d7, type: 3}
+  itemHeld: 1
   itemInfo: "\u91D1\u5C5E"

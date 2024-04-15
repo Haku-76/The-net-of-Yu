@@ -329,6 +329,14 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1536578110963488476, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8d3b1646898bbdb4f8911fa1b0800785, type: 2}
+    - target: {fileID: 1536578110963488476, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6819398106852035383, guid: 8d3b1646898bbdb4f8911fa1b0800785, type: 2}
     - target: {fileID: 2482039590844747776, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -393,6 +401,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: defaultTint.r
+      value: 0.72156864
+      objectReference: {fileID: 0}
+    - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: loadSprites.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: loadSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 45eaae8492b89e84e969c6ccbeb9bee3, type: 3}
+    - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: loadSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 519c20b7df44f824ba205c02ec500b10, type: 3}
+    - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: loadSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: b32cc331051818c48bba107af0a8b977, type: 3}
+    - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: loadSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 77d8f11e4af00594c8aaf1784c1dd7a8, type: 3}
+    - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: loadSprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 198b4d927eb1ce047a0d2f4cf628838a, type: 3}
+    - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: loadSprites.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 2b62f169ad6c04c2d9a3fa4e8c3aa694, type: 3}
+    - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: loadSprites.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 29bbd7792277ef3419dc7b91a4f1255d, type: 3}
+    - target: {fileID: 4943031000947819471, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8d3b1646898bbdb4f8911fa1b0800785, type: 2}
+    - target: {fileID: 4943031000947819471, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6819398106852035383, guid: 8d3b1646898bbdb4f8911fa1b0800785, type: 2}
     - target: {fileID: 5996290814164478203, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0

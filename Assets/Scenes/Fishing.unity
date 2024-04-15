@@ -335,7 +335,7 @@ SpriteRenderer:
   m_Size: {x: 4.91, y: 0.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &207684103
@@ -2278,8 +2278,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u8FD4\u56DE\u4E3B\u83DC\u5355"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8d3b1646898bbdb4f8911fa1b0800785, type: 2}
+  m_sharedMaterial: {fileID: -6819398106852035383, guid: 8d3b1646898bbdb4f8911fa1b0800785, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3342,7 +3342,7 @@ SpriteRenderer:
   m_Size: {x: 30.341036, y: 103.22}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2039509344
