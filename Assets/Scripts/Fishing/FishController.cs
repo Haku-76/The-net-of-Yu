@@ -83,6 +83,13 @@ public class FishController : MonoBehaviour
                 FishScared();
             }
         }
+        else if (collision.tag=="Bullet")
+        {
+            if (!isScared)
+            {
+                FishScared();
+            }
+        }
     }
     private void FishScared()
     {

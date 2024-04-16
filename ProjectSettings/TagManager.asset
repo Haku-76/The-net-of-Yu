@@ -6,6 +6,7 @@ TagManager:
   tags:
   - FishArea
   - Fish
+  - Bullet
   layers:
   - Default
   - TransparentFX
