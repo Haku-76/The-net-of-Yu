@@ -4,57 +4,53 @@ colorID: 0
 position: 0,0
 ---
 
-// sets background image to sprite called "bg_outside"
-<<Scene bg_outside>>
+<<Scene pier>>
 // start playing audioclip "ambient_birds" at 50% volume, loop forever
 //<<PlayAudio ambient_birds 0.5 loop>>
 
-<<Act Yu yu_idle right center white>>
+<<Act 郁 yu left center red>>
 
-那里，就是疍家，那个从未了解过的家乡。
-或许，我会得到书里的那种温暖，那种只有家人才能给予的依靠和呵护。又或许......
-没关系，郁，反正呆在哪里都一样，起码可以看到不一样的风光，不是吗......
-这次，我会有机会得知他们的消息吗?
-爷爷......还有......爸爸妈妈......
+郁: 那里，就是疍家，那个从未了解过的家乡。
+郁: 或许，我会得到书里的那种温暖，那种只有家人才能给予的依靠和呵护。又或许......
+郁: 没关系，郁，反正呆在哪里都一样，起码可以看到不一样的风光，不是吗......
+郁: 这次，我会有机会得知他们的消息吗?
+郁: 爷爷......还有......爸爸妈妈......
 
 <<Fade black 0.0 1.0 2.0>>
 <<Fade black 1.0 0.0 2.0>>
 
-<<Scene bg_inside>>
+<<Scene home-day>>
 
-// adds actor named "Eve" using sprite "aunt_idle", placed in left-half + center of screen, with white text label
-<<Act Aunt aunt_idle 1.25 center white>>
-<<Move Aunt left center 0.5>>
+<<Act 安阿姨 an right center blue>>
 
-<<Act ??? aunt_idle 1.25 center white>>
-???: 诶呀，靓女，你是吴阿爷家那个小妹妹是吗？
+安阿姨: 诶呀，靓女，你是吴阿爷家那个小妹妹是吗？
 
-Yu: ...嗯...请问您是？
+郁: ...嗯...请问您是？
 
-Aunt: 哦哦，我姓A，你叫我A阿姨就好啊。
+安阿姨: 哦哦，我姓安，你叫我安阿姨就好啊。
 
-Aunt: 吴阿爷年纪大咯，这一生病可不得了哦，所以我们只能赶紧想办法找他家里人回来好好照看照看咯。
+安阿姨: 吴阿爷年纪大咯，这一生病可不得了哦，所以我们只能赶紧想办法找他家里人回来好好照看照看咯。
 
-Aunt: 但是怎么就你一个人啊，你的爸妈嘞。
+安阿姨: 但是怎么就你一个人啊，你的爸妈嘞。
 
-Yu: .....他们，在我很小的时候就走了，我也不知道他们在哪里......
+郁: .....他们，在我很小的时候就走了，我也不知道他们在哪里......
 
-Aunt: 哎呦，唔好意思啊，我不知道啊。
+安阿姨: 哎呦，唔好意思啊，我不知道啊。
 
-Aunt: 没关系的啊，靓女，你这回来了，就和在家里一样的哈。
+安阿姨: 没关系的啊，靓女，你这回来了，就和在家里一样的哈。
 
-Yu: ......嗯，谢谢A阿姨。
+郁: ......嗯，谢谢安阿姨。
 
-Aunt: 唔紧要啦，那我先带你去找吴阿爷吧，箱子我帮你拿吧。
+安阿姨: 唔紧要啦，那我先带你去找吴阿爷吧，箱子我帮你拿吧。
 
-Yu: 不用不用！我自己来就好。
+郁: 不用不用！我自己来就好。
 
 虽然不会说家乡话，但是却听得懂，还挺神奇的......起码日常交流没问题了。
 
 <<Fade black 0.0 1.0 2.0>>
 <<Fade black 1.0 0.0 2.0>>
 
-<<Scene bg_ship>>
+<<Scene home-night>>
 
 Aunt: 吴阿爷！你家孙女回来拉！
 
@@ -166,7 +162,7 @@ Yu: 哦，来了!
 //Eve: ADDDDAAAMMMMMMM!!!
 
 // fade to black, from 0% opacity to 100% opacity, in 2.0 seconds
-<<Fade black 0.0 1.0 2.0>>
+// <<Fade black 0.0 1.0 2.0>>
 //THE END.
 
 ===

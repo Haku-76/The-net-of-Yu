@@ -4,6 +4,8 @@ Unity Editor Version: 2022.3.21f1
 
 AlibabaPuHuiTi-3-65-Medium SDF.asset：https://drive.google.com/file/d/1Y3Wu5QaMdUJYI9B7_yZzbpQl-KEGTPAX/view?usp=sharing
 
+策划案：https://b1nkwv3dn4f.feishu.cn/wiki/C4pCwToyXitoF1kRXqHcgeEanLf
+
 图鉴Asset：https://assetstore.unity.com/packages/tools/animation/book-page-curl-55588?aid=1101ldiAE&utm_campaign=unity_affiliate&utm_medium=affiliate&utm_source=partnerize-linkmaker
 
 2024/4/7 Update：
