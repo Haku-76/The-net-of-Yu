@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
 
@@ -8,45 +8,45 @@ public class CurrentSceneInventoryManager : MonoBehaviour
 
     void Start()
     {
-        // ³õÊ¼»¯´æ´¢½á¹¹
+        // åˆå§‹åŒ–å­˜å‚¨ç»“æ„
         inventory = new Dictionary<string, Dictionary<string, int>>();
 
-        // ¿ÉÒÔÔÚÕâÀï³õÊ¼»¯Ò»Ğ©²âÊÔÊı¾İ
-        AddItem("Óã", "Óã1", 1);
-        AddItem("Óã", "Óã2", 2);
-        AddItem("Óã", "Óã3", 3);
+        // å¯ä»¥åœ¨è¿™é‡Œåˆå§‹åŒ–ä¸€äº›æµ‹è¯•æ•°æ®
+        AddItem("é±¼", "é±¼1", 1);
+        AddItem("é±¼", "é±¼2", 2);
+        AddItem("é±¼", "é±¼3", 3);
 
-        AddItem("×ÊÔ´", "½ğÊô", 1);
-        AddItem("×ÊÔ´", "²£Á§", 2);
-        AddItem("×ÊÔ´", "Ïğ½º", 3);
+        AddItem("èµ„æº", "é‡‘å±", 1);
+        AddItem("èµ„æº", "ç»ç’ƒ", 2);
+        AddItem("èµ„æº", "æ©¡èƒ¶", 3);
 
-        AddItem("À¬»ø", "ËÜÁÏ´ü", 1);
-        AddItem("À¬»ø", "ÄáÁúÉş", 2);
-        AddItem("À¬»ø", "Ò×À­¹Ş", 3);
+        AddItem("åƒåœ¾", "å¡‘æ–™è¢‹", 1);
+        AddItem("åƒåœ¾", "å°¼é¾™ç»³", 2);
+        AddItem("åƒåœ¾", "æ˜“æ‹‰ç½", 3);
 
     }
 
-    // Ìí¼ÓÎïÆ·ÊıÁ¿µÄ·½·¨
+    // æ·»åŠ ç‰©å“æ•°é‡çš„æ–¹æ³•
     public void AddItem(string category, string item, int quantity)
     {
-        // ¼ì²éÊÇ·ñÒÑÓĞÕâ¸öÖÖÀà
+        // æ£€æŸ¥æ˜¯å¦å·²æœ‰è¿™ä¸ªç§ç±»
         if (!inventory.ContainsKey(category))
         {
             inventory[category] = new Dictionary<string, int>();
         }
 
-        // ¼ì²éÖÖÀàÏÂÊÇ·ñÒÑÓĞÕâ¸öÎïÆ·
+        // æ£€æŸ¥ç§ç±»ä¸‹æ˜¯å¦å·²æœ‰è¿™ä¸ªç‰©å“
         if (!inventory[category].ContainsKey(item))
         {
             inventory[category][item] = 0;
         }
 
-        // Ôö¼ÓÎïÆ·ÊıÁ¿
+        // å¢åŠ ç‰©å“æ•°é‡
         inventory[category][item] += quantity;
-        Debug.Log($"»ñµÃ: {category} - {item}, ÊıÁ¿: {inventory[category][item]}");
+        Debug.Log($"è·å¾—: {category} - {item}, æ•°é‡: {inventory[category][item]}");
     }
 
-    // ÓÃÓÚ¼ìË÷ÌØ¶¨ÎïÆ·ÊıÁ¿µÄ·½·¨
+    // ç”¨äºæ£€ç´¢ç‰¹å®šç‰©å“æ•°é‡çš„æ–¹æ³•
     public int GetItemQuantity(string category, string item)
     {
         if (inventory.ContainsKey(category) && inventory[category].ContainsKey(item))
@@ -56,47 +56,47 @@ public class CurrentSceneInventoryManager : MonoBehaviour
         return 0;
     }
 
-    // ÓÃÓÚ´òÓ¡µ±Ç°ËùÓĞÎïÆ·×´Ì¬µÄ·½·¨
+    // ç”¨äºæ‰“å°å½“å‰æ‰€æœ‰ç‰©å“çŠ¶æ€çš„æ–¹æ³•
     public void PrintInventory()
     {
         foreach (var category in inventory)
         {
-            Debug.Log($"ÖÖÀà: {category.Key}");
+            Debug.Log($"ç§ç±»: {category.Key}");
             foreach (var item in category.Value)
             {
-                Debug.Log($"  ÎïÆ·: {item.Key}, ÊıÁ¿: {item.Value}");
+                Debug.Log($"  ç‰©å“: {item.Key}, æ•°é‡: {item.Value}");
             }
         }
     }
 
     public void PrintInventory(TextMeshProUGUI fishText, TextMeshProUGUI resourceText, TextMeshProUGUI garbageText)
     {
-        // ³õÊ¼»¯Èı¸öÀà±ğµÄ×Ö·û´®
-        string fishInfo = "Óã:\n";
-        string resourceInfo = "×ÊÔ´:\n";
-        string garbageInfo = "À¬»ø:\n";
+        // åˆå§‹åŒ–ä¸‰ä¸ªç±»åˆ«çš„å­—ç¬¦ä¸²
+        string fishInfo = "é±¼:\n";
+        string resourceInfo = "èµ„æº:\n";
+        string garbageInfo = "åƒåœ¾:\n";
 
         foreach (var category in inventory)
         {
             foreach (var item in category.Value)
             {
-                // ¸ù¾İÀà±ğ£¬½«ÎïÆ·ĞÅÏ¢Ìí¼Óµ½ÏàÓ¦µÄ×Ö·û´®
-                if (category.Key == "Óã")
+                // æ ¹æ®ç±»åˆ«ï¼Œå°†ç‰©å“ä¿¡æ¯æ·»åŠ åˆ°ç›¸åº”çš„å­—ç¬¦ä¸²
+                if (category.Key == "é±¼")
                 {
                     fishInfo += $"{item.Key}: {item.Value}\n";
                 }
-                else if (category.Key == "×ÊÔ´")
+                else if (category.Key == "èµ„æº")
                 {
                     resourceInfo += $"{item.Key}: {item.Value}\n";
                 }
-                else if (category.Key == "À¬»ø")
+                else if (category.Key == "åƒåœ¾")
                 {
                     garbageInfo += $"{item.Key}: {item.Value}\n";
                 }
             }
         }
 
-        // ½«×Ö·û´®·ÖÅä¸øTextMeshProUGUI¶ÔÏó
+        // å°†å­—ç¬¦ä¸²åˆ†é…ç»™TextMeshProUGUIå¯¹è±¡
         fishText.text = fishInfo;
         resourceText.text = resourceInfo;
         garbageText.text = garbageInfo;

@@ -9,8 +9,8 @@ public class Slot : MonoBehaviour
     public TextMeshProUGUI slotName;
     public TextMeshProUGUI slotAmount;
 
-    public void ItemOnClicked()
-    {
-        InventoryManager.UpdateItemInfo(slotItem.itemInfo);
-    }
+    //public void ItemOnClicked()
+    //{
+    //    InventoryManager.UpdateItemInfo(slotItem.itemInfo);
+    //}
 }

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: "\u5851\u6599\u888B"
   m_EditorClassIdentifier: 
   itemName: "\u5851\u6599\u888B"
-  itemImage: {fileID: 0}
-  itemHeld: 0
+  itemImage: {fileID: 21300000, guid: 0dd2832f76c80204ba174f80499bf542, type: 3}
+  itemHeld: 1
   itemInfo: "\u5851\u6599\u888B"

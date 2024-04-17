@@ -21,7 +21,7 @@ public class InventoryManager : MonoBehaviour
 
     [Space(10)]
     public Slot slotPrefab;
-    public TextMeshProUGUI itemInformation;
+    //public TextMeshProUGUI itemInformation;
 
     private void Awake()
     {
@@ -36,13 +36,13 @@ public class InventoryManager : MonoBehaviour
     {
         //RefreshItem();
         RefreshAllBags();
-        instance.itemInformation.text = "";
+        //instance.itemInformation.text = "";
     }
 
-    public static void UpdateItemInfo(string itemDescription)
-    {
-        instance.itemInformation.text = itemDescription;
-    }
+    //public static void UpdateItemInfo(string itemDescription)
+    //{
+    //    instance.itemInformation.text = itemDescription;
+    //}
 
     public static void CreateNewItem(Item item, Inventory bag, GameObject grid)
     {
