@@ -5,8 +5,9 @@
   ],
   "excludeFiles": [],
   "localisation": {
-    "zh-Hans": {}
+    "zh-Hans": {},
+    "en": {}
   },
-  "baseLanguage": "en",
+  "baseLanguage": "zh-Hant",
   "compilerOptions": {}
 }

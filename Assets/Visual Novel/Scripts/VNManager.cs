@@ -386,9 +386,9 @@ namespace Yarn.Unity.Example {
             if (string.IsNullOrEmpty(actorName) == false && actors.ContainsKey(actorName)) {
                 HighlightSprite(actors[actorName].actorImage);
 				nameplateBG.color = actors[actorName].actorColor;
-                nameplateBG.gameObject.SetActive(true);
+                //nameplateBG.gameObject.SetActive(true);
             } else {
-                nameplateBG.gameObject.SetActive(false);
+                //nameplateBG.gameObject.SetActive(false);
             }
 
             onDialogueLineFinished();
