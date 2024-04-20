@@ -159,6 +159,7 @@ title: anTu
 tags:
 ---
 
+<<Scene squareBefore>>
 <<Act 安阿姨 an right 0.4 blue>>
 
 <<Act 郁 yu left bottom red>>
