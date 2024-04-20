@@ -111,7 +111,7 @@ public class BoatController : MonoBehaviour
             }
             else
             {
-                downTimer = downTimer / downTime * 0.8f;
+                downTimer =0.3f+downTimer / downTime * 0.5f;
             }
             isCd = true;
             Invoke("TurnToReady", cdTime);
