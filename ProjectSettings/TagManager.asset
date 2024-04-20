@@ -7,6 +7,8 @@ TagManager:
   - FishArea
   - Fish
   - Bullet
+  - FxTemporaire
+  - FishWeb
   layers:
   - Default
   - TransparentFX
@@ -18,8 +20,8 @@ TagManager:
   - Fish
   - Environment
   - FishArea
-  - 
-  - 
+  - Bullet
+  - FishWeb
   - 
   - 
   - 

@@ -19,6 +19,12 @@ public class BoatController : MonoBehaviour
     private CameraShake cameraShake;
     [SerializeField]
     private GameObject Bullet;
+    [SerializeField]
+    private float cdTime=1.5f;
+    private float downTimer;
+    [SerializeField]
+    private float downTime = 3;
+    private bool isCd;
     private void Awake()
     {
         Instance = this;
@@ -35,6 +41,7 @@ public class BoatController : MonoBehaviour
         }
         else
         {
+            ClearCharge();
             attackRange.SetActive(false);
         }
     }
@@ -70,15 +77,50 @@ public class BoatController : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             attackRange.SetActive(true);
-            if (Input.GetMouseButtonDown(0))
+            if (!isCd) 
             {
-                GameObject.Instantiate(Bullet, firePos.position, firePos.rotation);
+                BulletCharge();
             }
         }
         else
         {
+            ClearCharge();
             attackRange.SetActive(false);
         }
+    }
+    private void ClearCharge()
+    {
+        downTimer = 0;
+    }
+    private void BulletCharge()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            downTimer += Time.deltaTime;
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            GameObject temp = GameObject.Instantiate(Bullet, firePos.position, firePos.rotation);
+            if (downTimer > downTime)
+            {
+                downTimer = 0.8f;
+            }
+            else if (downTimer < 0.5)
+            {
+                downTimer = 0.3f;
+            }
+            else
+            {
+                downTimer = downTimer / downTime * 0.8f;
+            }
+            isCd = true;
+            Invoke("TurnToReady", cdTime);
+            Destroy(temp, downTimer);
+        }
+    }
+    private void TurnToReady()
+    {
+        isCd = false;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

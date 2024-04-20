@@ -21,6 +21,8 @@ public class FishController : MonoBehaviour
     private float timer = 0;
     private Rigidbody2D rb;
     private bool isScared = false;
+    [SerializeField]
+    private float capturePossibility;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -42,7 +44,7 @@ public class FishController : MonoBehaviour
                 }
                 else
                 {
-                    FishScared();
+                    FishScared(BoatController.Instance.transform.position);
                 }
             }
             else
@@ -80,24 +82,32 @@ public class FishController : MonoBehaviour
         {
             if (!isScared)
             {
-                FishScared();
+                FishScared(BoatController.Instance.transform.position);
             }
         }
-        else if (collision.tag=="Bullet")
+        else if (collision.tag=="FishWeb")
         {
-            if (!isScared)
+            Debug.Log(capturePossibility >= Random.Range(0, 1f));
+            if (capturePossibility>=Random.Range(0,1f))
             {
-                FishScared();
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                if (!isScared)
+                {
+                    FishScared(collision.transform.position);
+                }
             }
         }
     }
-    private void FishScared()
+    private void FishScared(Vector3 target)
     {
         isScared = true;
         timer = 0;
         Timer = 3;
         rb.angularVelocity = 0;
         speed = 7;
-        transform.eulerAngles = new Vector3(0, 0, Vector3.SignedAngle(Vector3.up, transform.position- BoatController.Instance.transform.position, Vector3.forward));
+        transform.eulerAngles = new Vector3(0, 0, Vector3.SignedAngle(Vector3.up, transform.position-target, Vector3.forward));
     }
 }
