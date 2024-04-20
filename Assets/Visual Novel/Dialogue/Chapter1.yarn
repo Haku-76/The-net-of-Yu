@@ -118,6 +118,11 @@ position: 0,0
 
 <<Fade black 0.0 1.0 2.0>>
 
+<<HideAll>>
+
+<<Fade black 1.0 0.0 1.0>>
+
+<<wait 1>>
 <<jump Chapter2>>
 
 //<<Fade black 0.0 1.0 2.0>>
@@ -129,7 +134,6 @@ tags:
 ---
 
 <<Scene squareBefore>>
-<<Fade black 1.0 0.0 1.0>>
 <<Act 安阿姨 an right 0.4 blue>>
 
 安阿姨: A坐坐坐，这个是艇仔粥，用鱼片、叉烧、鱿鱼丝、花生、油条碎啥的煮的，可好吃了。
