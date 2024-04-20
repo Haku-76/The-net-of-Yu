@@ -146,6 +146,8 @@ tags:
 
 郁：C好的，谢谢阿姨！
 
+<<HideAll>>
+
 //弹出地图
 <<jump anTu>>
 //<<declare $hasVisitedOption2 = false>>

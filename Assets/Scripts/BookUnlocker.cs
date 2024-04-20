@@ -13,9 +13,10 @@ public class BookUnlocker : MonoBehaviour
     public TextMeshProUGUI amountHave;
     public TextMeshProUGUI amountNeed;
     public GameObject compositeAfter;
-    public GameObject hint;
-    public GameObject obtain;
-    public GameObject vfx;
+    public GameObject tip;
+    public GameObject vfx1;
+    public GameObject vfx2;
+    public float vfx1Duration = 0.5f;
     public float displayTime = 3.0f;
 
     void Update()
@@ -29,23 +30,29 @@ public class BookUnlocker : MonoBehaviour
         {
             if (int.Parse(amountHave.text) >= int.Parse(amountNeed.text))
             {
-                obtain.SetActive(true);
-                vfx.SetActive(true);
-                imageBefore.SetActive(false);
-                imageAfter.SetActive(true);
-                introductionBefore.SetActive(false);
-                introductionAfter.SetActive(true);
+                vfx1.SetActive(true);
+                StartCoroutine(ActivateSecondEffect(vfx1Duration));
                 unlockItem.itemHeld -= int.Parse(amountNeed.text);
-                StartCoroutine(DisableAfterTime(obtain, displayTime));
+                StartCoroutine(DisableAfterTime(tip, displayTime));
                 compositeAfter.SetActive(true);
             }
             else
             {
-                hint.SetActive(true);
-                StartCoroutine(DisableAfterTime(hint, displayTime));
+                tip.SetActive(true);
+                StartCoroutine(DisableAfterTime(tip, displayTime));
             }
         }
         
+    }
+
+    IEnumerator ActivateSecondEffect(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        vfx2.SetActive(true);
+        imageBefore.SetActive(false);
+        imageAfter.SetActive(true);
+        introductionBefore.SetActive(false);
+        introductionAfter.SetActive(true);
     }
 
     IEnumerator DisableAfterTime(GameObject objectToDisable, float time)
