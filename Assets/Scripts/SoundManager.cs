@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
-    public Slider Overall_Slider;
     public Slider BGM_Slider;
     public Slider SE_Slider;
 
@@ -17,7 +16,6 @@ public class SoundManager : MonoBehaviour
     [SerializeField] List<SESoundData> seSoundDatas;
 
     [Space(10)]
-    public float masterVolume;
     public float bgmMasterVolume;
     public float seMasterVolume;
 
@@ -34,29 +32,35 @@ public class SoundManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
 
+    private void Start()
+    {
+        BGM_Slider.value = 0.5f;
+        SE_Slider.value = 0.5f;
         PlayBGM(BGMSoundData.BGM.Title);
     }
 
     public void Update()
     {
-        masterVolume = Overall_Slider.value;
         bgmMasterVolume = BGM_Slider.value;
         seMasterVolume = SE_Slider.value;
+        bgmAudioSource.volume = bgmMasterVolume;
+        seAudioSource.volume = seMasterVolume;
     }
 
     public void PlayBGM(BGMSoundData.BGM bgm)
     {
         BGMSoundData data = bgmSoundDatas.Find(data => data.bgm == bgm);
         bgmAudioSource.clip = data.audioClip;
-        bgmAudioSource.volume = data.volume * bgmMasterVolume * masterVolume;
+        bgmAudioSource.volume = bgmMasterVolume;
         bgmAudioSource.Play();
     }
 
     public void PlaySE(SESoundData.SE se)
     {
         SESoundData data = seSoundDatas.Find(data => data.se == se);
-        seAudioSource.volume = data.volume * seMasterVolume * masterVolume;
+        seAudioSource.volume = seMasterVolume;
         seAudioSource.PlayOneShot(data.audioClip);
     }
 
