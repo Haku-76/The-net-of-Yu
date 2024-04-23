@@ -26,6 +26,7 @@ public class BookUnlocker : MonoBehaviour
 
     public void unlock()
     {
+        Debug.Log("Clicked");
         if(imageAfter.activeInHierarchy == false)
         {
             if (int.Parse(amountHave.text) >= int.Parse(amountNeed.text))
