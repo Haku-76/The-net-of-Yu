@@ -9,9 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c09e45435aae68b449d90b4d5dfc984d, type: 3}
-  m_Name: Tool
+  m_Script: {fileID: 11500000, guid: 84332a1766292414d80d3511938f2b31, type: 3}
+  m_Name: "2\u7EA7\u8239"
   m_EditorClassIdentifier: 
-  itemList:
-  - {fileID: 11400000, guid: a1757b2c7a892ef499cbdf862b59353d, type: 2}
-  - {fileID: 11400000, guid: 0488d4c6d2d75b243a981c6b99343831, type: 2}
+  itemName: "2\u7EA7\u8239"
+  itemImage: {fileID: 21300000, guid: 3846a10e53d411f4a84bd06be088f4ae, type: 3}
+  itemHeld: 1
+  itemInfo: 
+  cost: 20
+  range: 0
+  efficiency: 0
+  velocity: 20
