@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84332a1766292414d80d3511938f2b31, type: 3}
+  m_Name: Fish4
+  m_EditorClassIdentifier: 
+  itemName: "\u5C0F\u9EC4\u9C7C"
+  itemImage: {fileID: 21300000, guid: 5e55c498de58e0d4691d7663311b9317, type: 3}
+  itemHeld: 10
+  itemInfo: 
+  pollution: 40
+  cost: 40
+  range: 0
+  efficiency: 0
+  velocity: 0

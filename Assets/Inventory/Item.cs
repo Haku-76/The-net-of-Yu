@@ -10,6 +10,8 @@ public class Item : ScriptableObject
     [TextArea]
     public string itemInfo;
 
+    public int pollution;
+
     public string cost;
     public float range;
     public float efficiency;

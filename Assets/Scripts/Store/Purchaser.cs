@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-using TMPro;
 
 public class Purchaser : MonoBehaviour
 {
