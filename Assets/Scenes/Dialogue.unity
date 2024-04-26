@@ -400,7 +400,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1974749783842263294, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: startNode
-      value: Start
+      value: Chapter4
       objectReference: {fileID: 0}
     - target: {fileID: 2482039590844747776, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_AnchorMax.y
@@ -480,7 +480,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: loadSprites.Array.size
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: loadSprites.Array.data[0]
@@ -542,6 +542,10 @@ PrefabInstance:
       propertyPath: loadSprites.Array.data[14]
       value: 
       objectReference: {fileID: 21300000, guid: 2c99d0e756f703a478b629da6bb5733d, type: 3}
+    - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: loadSprites.Array.data[15]
+      value: 
+      objectReference: {fileID: 21300000, guid: 10d9a778ec1a86f48afb8002f15f88df, type: 3}
     - target: {fileID: 3549739876377949297, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
