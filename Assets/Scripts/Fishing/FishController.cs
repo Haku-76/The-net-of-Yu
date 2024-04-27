@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FishController : MonoBehaviour
 {
+    public Item fishData;
     [SerializeField]
     private float maxSpeed;
     [SerializeField]
@@ -90,6 +91,7 @@ public class FishController : MonoBehaviour
             Debug.Log(capturePossibility >= Random.Range(0, 1f));
             if (capturePossibility>=Random.Range(0,1f))
             {
+                CurrentSceneInventoryManager.Instance.AddItem("гу", fishData.itemName, 1);
                 Destroy(this.gameObject);
             }
             else
