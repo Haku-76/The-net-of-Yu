@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: "\u5C0F\u9EC4\u9C7C"
   itemImage: {fileID: 21300000, guid: 5e55c498de58e0d4691d7663311b9317, type: 3}
-  itemHeld: 10
+  itemHeld: 7
   itemInfo: 
-  pollution: 40
-  cost: 40
+  pollution: 2
+  cost: 20
   range: 0
   efficiency: 0
   velocity: 0

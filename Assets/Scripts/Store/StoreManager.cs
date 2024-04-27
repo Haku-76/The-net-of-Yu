@@ -77,19 +77,19 @@ public class StoreManager : MonoBehaviour
         netLevelOne.itemHeld = 1;
         shipLevelOne.itemHeld = 1;
 
-        netLevelTwo.cost = "20";
+        netLevelTwo.cost = "200";
         netLevelTwo.itemHeld = 0;
 
-        netLevelThree.cost = "30";
+        netLevelThree.cost = "400";
         netLevelThree.itemHeld = 0;
 
-        shipLevelTwo.cost = "20";
+        shipLevelTwo.cost = "600";
         shipLevelTwo.itemHeld = 0;
 
-        shipLevelThree.cost = "30";
+        shipLevelThree.cost = "700";
         shipLevelThree.itemHeld = 0;
 
-        shipLevelFour.cost = "40";
+        shipLevelFour.cost = "900";
         shipLevelFour.itemHeld = 0;
     }
 
