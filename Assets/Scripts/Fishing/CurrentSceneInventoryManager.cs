@@ -4,26 +4,18 @@ using TMPro;
 
 public class CurrentSceneInventoryManager : MonoBehaviour
 {
+    public static CurrentSceneInventoryManager Instance {get; private set;}
     private Dictionary<string, Dictionary<string, int>> inventory;
-
+    private void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         // 初始化存储结构
         inventory = new Dictionary<string, Dictionary<string, int>>();
 
         // 可以在这里初始化一些测试数据
-        AddItem("鱼", "鱼1", 1);
-        AddItem("鱼", "鱼2", 2);
-        AddItem("鱼", "鱼3", 3);
-
-        AddItem("资源", "金属", 1);
-        AddItem("资源", "玻璃", 2);
-        AddItem("资源", "橡胶", 3);
-
-        AddItem("垃圾", "塑料袋", 1);
-        AddItem("垃圾", "尼龙绳", 2);
-        AddItem("垃圾", "易拉罐", 3);
-
     }
 
     // 添加物品数量的方法
