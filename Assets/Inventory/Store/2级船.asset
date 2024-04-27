@@ -16,7 +16,8 @@ MonoBehaviour:
   itemImage: {fileID: 21300000, guid: 3846a10e53d411f4a84bd06be088f4ae, type: 3}
   itemHeld: 1
   itemInfo: 
-  cost: 20
+  pollution: 0
+  cost: 600
   range: 0
   efficiency: 0
   velocity: 20

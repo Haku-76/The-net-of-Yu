@@ -14,5 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: "\u91D1\u5E01"
   itemImage: {fileID: 0}
-  itemHeld: 10000
+  itemHeld: 800
   itemInfo: 
+  pollution: 0
+  cost: 
+  range: 0
+  efficiency: 0
+  velocity: 0
