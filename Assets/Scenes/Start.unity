@@ -670,7 +670,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 402918195}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 5fc476050f9c20c49b2c1e1125498f1b, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: d04d557ded376b246a80fa96c3959030, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -684,12 +684,14 @@ VideoPlayer:
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
-  m_TargetAudioSources: []
-  m_DirectAudioVolumes: []
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
   m_Url: 
-  m_EnabledAudioTracks: 
-  m_DirectAudioMutes: 
-  m_ControlledAudioTrackCount: 0
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
   m_Looping: 1
@@ -1383,7 +1385,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1172058925
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1925,7 +1927,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 543, y: -403.2}
+  m_AnchoredPosition: {x: 180, y: -379}
   m_SizeDelta: {x: -1699.0901, y: -899}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1616959127
@@ -1948,7 +1950,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u9F20\u6807\u70B9\u51FB\u4EFB\u610F\u4F4D\u7F6E\n-\u5F00\u59CB\u6E38\u620F-"
+  m_text: "\u9F20\u6807\u70B9\u51FB\u4EFB\u610F\u4F4D\u7F6E"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 00f0805bcf673924ea4d9b646ac78359, type: 2}
   m_sharedMaterial: {fileID: -6819398106852035383, guid: 00f0805bcf673924ea4d9b646ac78359, type: 2}
