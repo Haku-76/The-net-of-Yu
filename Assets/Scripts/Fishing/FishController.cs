@@ -88,10 +88,9 @@ public class FishController : MonoBehaviour
         }
         else if (collision.tag=="FishWeb")
         {
-            Debug.Log(capturePossibility >= Random.Range(0, 1f));
             if (capturePossibility>=Random.Range(0,1f))
             {
-                CurrentSceneInventoryManager.Instance.AddItem("гу", fishData.itemName, 1);
+                CurrentSceneInventoryManager.Instance.AddItem(fishData);
                 Destroy(this.gameObject);
             }
             else

@@ -1,19 +1,20 @@
 ﻿using UnityEngine;
 using TMPro;
 
+
 public class CountdownTimer : MonoBehaviour
 {
     public float timeLeft; 
     public TextMeshProUGUI countdownText;
-
     [Space(15)]
     public GameObject CheckoutPage;
-    public TextMeshProUGUI fishText;
-    public TextMeshProUGUI resourceText;
-    public TextMeshProUGUI garbageText;
-
-    void Update()
+    private bool gameover=false;
+    private void Update()
     {
+        if (gameover)
+        {
+            return;
+        }
         if (timeLeft > 0)
         {
             timeLeft -= Time.deltaTime;
@@ -24,8 +25,10 @@ public class CountdownTimer : MonoBehaviour
         }
         else
         {
-            this.GetComponent<CurrentSceneInventoryManager>().PrintInventory(fishText, resourceText, garbageText);
+            gameover = true;
             CheckoutPage.SetActive(true);
+            CurrentSceneInventoryManager.Instance.GetItemList();
         }
     }
+
 }

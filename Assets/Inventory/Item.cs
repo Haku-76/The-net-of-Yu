@@ -16,4 +16,13 @@ public class Item : ScriptableObject
     public float range;
     public float efficiency;
     public float velocity;
+
+    public bool hasGet;
+    public ItemClass itemClass;
+}
+public enum ItemClass
+{
+    Fish,
+    Garbage,
+    Resource
 }
