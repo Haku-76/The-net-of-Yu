@@ -35,19 +35,28 @@ public class FishAreaController : MonoBehaviour
     }
     private void Update()
     {
+        if (FishingController.Instance.isGameOver())
+        {
+            ChangeFishState(false);
+            return;
+        }
         if (BoatController.Instance.transform.position.y>minShowDistanceY&&
             BoatController.Instance.transform.position.y<maxShowDistanceY)
         {
-            if (!transform.GetChild(0).gameObject.activeSelf)
-            {
-                transform.GetChild(0).gameObject.SetActive(true);
-            }
+            ChangeFishState(true);
         }
         else
         {
-            if (transform.GetChild(0).gameObject.activeSelf)
+            ChangeFishState(false);
+        }
+    }
+    private void ChangeFishState(bool state)
+    {
+        for (int i=0;i<transform.childCount;i++)
+        {
+            if (transform.GetChild(i).gameObject.activeSelf != state)
             {
-                transform.GetChild(0).gameObject.SetActive(false);
+                transform.GetChild(i).gameObject.SetActive(state);
             }
         }
     }

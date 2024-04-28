@@ -35,6 +35,10 @@ public class BoatController : MonoBehaviour
     }
     void Update()
     {
+        if (FishingController.Instance.isGameOver())
+        {
+            return;
+        }
         if (!isCollidering)
         {
             Attack();
@@ -47,6 +51,11 @@ public class BoatController : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (FishingController.Instance.isGameOver())
+        {
+            rb.velocity = Vector3.zero;
+            return;
+        }
         if (!isCollidering)
         {
             Move();
