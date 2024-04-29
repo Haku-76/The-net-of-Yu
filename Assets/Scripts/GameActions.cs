@@ -3,25 +3,75 @@ using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameActions : MonoBehaviour
 {
     public DialogueRunner dialogueRunner;
     public Item coin;
+    private static int coinNum;
+    public Item pollution;
+    private static int pollutionNum;
+    private static int jumpPoint;
 
     void Awake()
     {
         dialogueRunner.AddCommandHandler<int>("adjustCoin", AdjustCoin);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void AdjustCoin(int changeValue)
     {
         coin.itemHeld += changeValue;
+    }
+
+    private void Update()
+    {
+        coinNum = coin.itemHeld;
+        
+        //pollutionNum = pollution.itemHeld;
+    }
+
+    [YarnCommand("BuyShip")]
+    public void BuyShip()
+    {
+        print("已经买了");
+        coin.itemHeld -= 600;
+    }
+
+    [YarnFunction("checkCoin")]
+    public static int checkCoin()
+    {
+        return coinNum;
+    }
+
+    [YarnCommand("addPollution")]
+    public void pollutionChange(int addNum)
+    {
+        pollution.itemHeld += addNum;
+    }
+
+    [YarnCommand("NextScene")]
+    public void NextScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
+    [YarnCommand("startNode")]
+    public void startNode(string nodeName)
+    {
+        print("startNode将改为" + nodeName);
+        dialogueRunner.startNode = nodeName;
+    }
+
+    [YarnFunction("jumpToPoint")]
+    public static int JumpPoint()
+    {
+        return jumpPoint;
+    }
+
+    [YarnCommand("setJumpPoint")]
+    public void setJumpPoint(int pointNum)
+    {
+        jumpPoint = pointNum;
     }
 }

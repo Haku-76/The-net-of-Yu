@@ -233,6 +233,11 @@ title: Chen
 tags:
 position: -274,-230
 ---
+<<if jumpToPoint() == 1>>
+    <<jump chenTu>>
+<<elseif jumpToPoint() == 2>>
+    <<jump Chapter4>>
+<<endif>>
 
 <<Scene ChomeDay>>
 <<Act 安阿姨 an right 0.4 blue>>
@@ -257,8 +262,10 @@ position: -274,-230
 
 <<declare $hasVisitedChenOption2 = false>>
 //<<declare $money = 0>>
-<<jump chenTu>>
 <<HideAll>>
+<<setJumpPoint DialogueCanvas 1>>
+<<NextScene DialogueCanvas MainMenu>>
+//<<jump chenTu>>
 ===
 
 title: chenTu
@@ -276,11 +283,13 @@ position: -286,19
 -> 我的船<<if $hasVisitedChenOption2 == false>>
     陈大叔: 选好日子了吗，都准备好了咱简单祭拜一下，就可以“起龙头安龙骨”了。
     是否支付（600）金币
+    <<set $money to checkCoin()>>
         ->否
             <<HideAll>>
             <<jump chenTu>>
             <<HideAll>>
         ->是<<if $money >= 600>>
+            <<BuyShip DialogueCanvas>>
             陈大叔: 恭喜啊孩子，有自己的船了，正好赶上开渔节一起庆祝吧哈哈哈！
             <<Scene home-day>>
             <<Hide 陈大叔>>
@@ -289,6 +298,7 @@ position: -286,19
             郁: 明天就是开渔节了，不知道会发生，好期待啊。
             <<set $hasVisitedChenOption2 to true>>
             <<HideAll>>
+            <<setJumpPoint DialogueCanvas 2>>
             <<jump aChoice>>
 // -> 我想购买一些东西
 // -> 出售鱼
@@ -330,10 +340,13 @@ position: 53,23
 郁: 爷爷，您觉得这事......
 吴阿爷: 唉，这售价确实比直接出售要高的多......
 郁: 嗯。
-你决定给出的答案：
+你决定对开加工厂这件事：
 -> 赞成
+    <<addPollution DialogueCanvas 2>>
 -> 反对
+    <<addPollution DialogueCanvas -1>>
 -> 弃权
+    <<addPolution DialogueCanvas 1>>
 
 <<HideAll>>
 //后续影响剧情

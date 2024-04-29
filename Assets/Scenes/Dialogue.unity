@@ -392,7 +392,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1944562149136137351, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 3.8632202
+      value: 3.8632812
       objectReference: {fileID: 0}
     - target: {fileID: 1944562149136137351, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -400,7 +400,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1974749783842263294, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: startNode
-      value: Start
+      value: Chen
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974749783842263294, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: startAutomatically
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2482039590844747776, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_AnchorMax.y
@@ -430,6 +434,10 @@ PrefabInstance:
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 47fe42fc6d946ab4e8255d4212196b21, type: 2}
+    - target: {fileID: 2883355632282176679, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: m_Name
+      value: DialogueCanvas
+      objectReference: {fileID: 0}
     - target: {fileID: 3326781437174624206, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -668,7 +676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5996290814164478203, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 27.255981
+      value: 27.25586
       objectReference: {fileID: 0}
     - target: {fileID: 6266494215004813811, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_IsActive
@@ -737,6 +745,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueRunner: {fileID: 3484502708253349316}
   coin: {fileID: 11400000, guid: 63a44567240a9be4db431f1fb8fe1e78, type: 2}
+  pollution: {fileID: 11400000, guid: cfe28d1489f205d47a700f29cf14e8fd, type: 2}
 --- !u!114 &3484502708253349316 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1974749783842263294, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
