@@ -25,7 +25,7 @@ public class FishAreaController : MonoBehaviour
                 maxHeight=t.y+transform.position.y;
             }
         }
-        minShowDistanceY = minHeight-Camera.main.orthographicSize*1.1f;
+        minShowDistanceY = minHeight-Camera.main.orthographicSize*1.1f-2.6f;
         maxShowDistanceY= maxHeight + Camera.main.orthographicSize * 1.1f;
         foreach (var t in fishControllers)
         {

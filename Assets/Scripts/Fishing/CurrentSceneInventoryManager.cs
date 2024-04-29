@@ -52,7 +52,7 @@ public class CurrentSceneInventoryManager : MonoBehaviour
             switch (temp.Key.itemClass)
             {
                 case ItemClass.Fish:
-                    GameObject.Instantiate(ItemElement, FishMenu).GetComponent<ItemElement>().InitItem(temp.Key.itemImage, temp.Value);
+                    GameObject.Instantiate(ItemElement, FishMenu).GetComponent<ItemElement>().InitItem(temp.Key.itemImage, temp.Value,0.4f);
                     FishBag.AddItem(temp.Key, temp.Value);
                     if (!temp.Key.hasGet)
                     {
@@ -74,11 +74,12 @@ public class CurrentSceneInventoryManager : MonoBehaviour
                     }
                     break;
                 case ItemClass.Resource:
-                    GameObject.Instantiate(ItemElement, ResourceMenu).GetComponent<ItemElement>().InitItem(temp.Key.itemImage, temp.Value);
+                    GameObject.Instantiate(ItemElement, ResourceMenu).GetComponent<ItemElement>().InitItem(temp.Key.itemImage, temp.Value,0.22f);
+
                     ResourceBag.AddItem(temp.Key, temp.Value);
                     break;
                 case ItemClass.Garbage:
-                    GameObject.Instantiate(ItemElement, GarbageMenu).GetComponent<ItemElement>().InitItem(temp.Key.itemImage, temp.Value);
+                    GameObject.Instantiate(ItemElement, GarbageMenu).GetComponent<ItemElement>().InitItem(temp.Key.itemImage, temp.Value,0.22f);
                     GarbageBag.AddItem(temp.Key, temp.Value);
                     break;
             }
