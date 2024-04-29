@@ -3,6 +3,12 @@ tags:
 colorID: 0
 position: -230,-1019
 ---
+<<if jumpToPoint() == 1>>
+    <<jump chenTu>>
+<<elseif jumpToPoint() == 2>>
+    <<jump Chapter4>>
+<<endif>>
+
 
 <<Scene pier>>
 // start playing audioclip "ambient_birds" at 50% volume, loop forever
@@ -233,11 +239,6 @@ title: Chen
 tags:
 position: -274,-230
 ---
-<<if jumpToPoint() == 1>>
-    <<jump chenTu>>
-<<elseif jumpToPoint() == 2>>
-    <<jump Chapter4>>
-<<endif>>
 
 <<Scene ChomeDay>>
 <<Act 安阿姨 an right 0.4 blue>>
