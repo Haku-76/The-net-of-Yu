@@ -1,96 +1,82 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using DG.Tweening;
+using UnityEngine.UI;
 
 public class CurrentSceneInventoryManager : MonoBehaviour
 {
     public static CurrentSceneInventoryManager Instance {get; private set;}
-    private Dictionary<string, Dictionary<string, int>> inventory;
+    public List<Item> CurrentItemList;
+    public Transform FishMenu;
+    public Transform GarbageMenu;
+    public Transform ResourceMenu;
+    public GameObject ItemElement;
+    public Inventory FishBag;
+    public Inventory GarbageBag;
+    public Inventory ResourceBag;
+    private Sequence BookList;
+    public GameObject bookElement;
+    [SerializeField]
+    private GameObject bookPanel;
     private void Awake()
     {
         Instance = this;
+        BookList = DOTween.Sequence();
+        BookList.Pause();
     }
-    void Start()
+    public void AddItem(Item item)
     {
-        // 初始化存储结构
-        inventory = new Dictionary<string, Dictionary<string, int>>();
-
-        // 可以在这里初始化一些测试数据
-    }
-
-    // 添加物品数量的方法
-    public void AddItem(string category, string item, int quantity)
-    {
-        // 检查是否已有这个种类
-        if (!inventory.ContainsKey(category))
+        if (item!=null)
         {
-            inventory[category] = new Dictionary<string, int>();
+            CurrentItemList.Add(item);
         }
-
-        // 检查种类下是否已有这个物品
-        if (!inventory[category].ContainsKey(item))
-        {
-            inventory[category][item] = 0;
-        }
-
-        // 增加物品数量
-        inventory[category][item] += quantity;
-        Debug.Log($"获得: {category} - {item}, 数量: {inventory[category][item]}");
     }
-
-    // 用于检索特定物品数量的方法
-    public int GetItemQuantity(string category, string item)
+    public void GetItemList ()
     {
-        if (inventory.ContainsKey(category) && inventory[category].ContainsKey(item))
+        Dictionary<Item,int> Templist= new Dictionary<Item,int>();
+        bookPanel.SetActive(true) ;
+        foreach (Item item in CurrentItemList)
         {
-            return inventory[category][item];
-        }
-        return 0;
-    }
-
-    // 用于打印当前所有物品状态的方法
-    public void PrintInventory()
-    {
-        foreach (var category in inventory)
-        {
-            Debug.Log($"种类: {category.Key}");
-            foreach (var item in category.Value)
+            if (!Templist.ContainsKey(item))
             {
-                Debug.Log($"  物品: {item.Key}, 数量: {item.Value}");
+                Templist.Add(item,1);
+            }
+            else
+            {
+                Templist[item]++;
             }
         }
-    }
-
-    public void PrintInventory(TextMeshProUGUI fishText, TextMeshProUGUI resourceText, TextMeshProUGUI garbageText)
-    {
-        // 初始化三个类别的字符串
-        string fishInfo = "鱼:\n";
-        string resourceInfo = "资源:\n";
-        string garbageInfo = "垃圾:\n";
-
-        foreach (var category in inventory)
+        foreach(var temp in Templist)
         {
-            foreach (var item in category.Value)
+            switch (temp.Key.itemClass)
             {
-                // 根据类别，将物品信息添加到相应的字符串
-                if (category.Key == "鱼")
-                {
-                    fishInfo += $"{item.Key}: {item.Value}\n";
-                }
-                else if (category.Key == "资源")
-                {
-                    resourceInfo += $"{item.Key}: {item.Value}\n";
-                }
-                else if (category.Key == "垃圾")
-                {
-                    garbageInfo += $"{item.Key}: {item.Value}\n";
-                }
+                case ItemClass.Fish:
+                    GameObject.Instantiate(ItemElement, FishMenu).GetComponent<ItemElement>().InitItem(temp.Key.itemImage, temp.Value);
+                    FishBag.AddItem(temp.Key, temp.Value);
+                    if (!temp.Key.hasGet)
+                    {
+                        temp.Key.hasGet = true;
+                        GameObject go=Instantiate(bookElement, bookPanel.transform);
+                        go.GetComponent<Image>().sprite= temp.Key.bookSpr;
+                        go.transform.localScale = Vector3.zero;
+                        BookList.Append(go.transform.DOScale(Vector3.one, 0.5f));
+                        BookList.AppendInterval(1f);
+                        BookList.Append(go.transform.DOScale(Vector3.zero, 0.3f));
+                    }
+                    break;
+                case ItemClass.Resource:
+                    GameObject.Instantiate(ItemElement, ResourceMenu).GetComponent<ItemElement>().InitItem(temp.Key.itemImage, temp.Value);
+                    ResourceBag.AddItem(temp.Key, temp.Value);
+                    break;
+                case ItemClass.Garbage:
+                    GameObject.Instantiate(ItemElement, GarbageMenu).GetComponent<ItemElement>().InitItem(temp.Key.itemImage, temp.Value);
+                    GarbageBag.AddItem(temp.Key, temp.Value);
+                    break;
             }
         }
-
-        // 将字符串分配给TextMeshProUGUI对象
-        fishText.text = fishInfo;
-        resourceText.text = resourceInfo;
-        garbageText.text = garbageInfo;
+        BookList.OnComplete(() => { bookPanel.SetActive(false); });
+        BookList.Restart();
     }
+
 }

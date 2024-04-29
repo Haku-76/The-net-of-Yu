@@ -25,6 +25,8 @@ public class BoatController : MonoBehaviour
     [SerializeField]
     private float downTime = 3;
     private bool isCd;
+    [SerializeField]
+    private Animator boatAnm;
     private void Awake()
     {
         Instance = this;
@@ -35,6 +37,10 @@ public class BoatController : MonoBehaviour
     }
     void Update()
     {
+        if (FishingController.Instance.isGameOver())
+        {
+            return;
+        }
         if (!isCollidering)
         {
             Attack();
@@ -47,6 +53,11 @@ public class BoatController : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (FishingController.Instance.isGameOver())
+        {
+            rb.velocity = Vector3.zero;
+            return;
+        }
         if (!isCollidering)
         {
             Move();
@@ -70,6 +81,7 @@ public class BoatController : MonoBehaviour
         {
             rb.angularVelocity = 0;
         }
+        boatAnm.SetFloat("moveSpeed", move.y);
         rb.velocity = transform.up*move.y*moveSpeed;
     }
     private void Attack()
@@ -116,6 +128,7 @@ public class BoatController : MonoBehaviour
             isCd = true;
             Invoke("TurnToReady", cdTime);
             Destroy(temp, downTimer);
+            ClearCharge();
         }
     }
     private void TurnToReady()
