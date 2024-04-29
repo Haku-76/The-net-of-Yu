@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using DG.Tweening;
+using UnityEngine.UI;
 
 public class CurrentSceneInventoryManager : MonoBehaviour
 {
@@ -13,9 +15,15 @@ public class CurrentSceneInventoryManager : MonoBehaviour
     public Inventory FishBag;
     public Inventory GarbageBag;
     public Inventory ResourceBag;
+    private Sequence BookList;
+    public GameObject bookElement;
+    [SerializeField]
+    private GameObject bookPanel;
     private void Awake()
     {
         Instance = this;
+        BookList = DOTween.Sequence();
+        BookList.Pause();
     }
     public void AddItem(Item item)
     {
@@ -27,6 +35,7 @@ public class CurrentSceneInventoryManager : MonoBehaviour
     public void GetItemList ()
     {
         Dictionary<Item,int> Templist= new Dictionary<Item,int>();
+        bookPanel.SetActive(true) ;
         foreach (Item item in CurrentItemList)
         {
             if (!Templist.ContainsKey(item))
@@ -45,6 +54,16 @@ public class CurrentSceneInventoryManager : MonoBehaviour
                 case ItemClass.Fish:
                     GameObject.Instantiate(ItemElement, FishMenu).GetComponent<ItemElement>().InitItem(temp.Key.itemImage, temp.Value);
                     FishBag.AddItem(temp.Key, temp.Value);
+                    if (!temp.Key.hasGet)
+                    {
+                        temp.Key.hasGet = true;
+                        GameObject go=Instantiate(bookElement, bookPanel.transform);
+                        go.GetComponent<Image>().sprite= temp.Key.bookSpr;
+                        go.transform.localScale = Vector3.zero;
+                        BookList.Append(go.transform.DOScale(Vector3.one, 0.5f));
+                        BookList.AppendInterval(1f);
+                        BookList.Append(go.transform.DOScale(Vector3.zero, 0.3f));
+                    }
                     break;
                 case ItemClass.Resource:
                     GameObject.Instantiate(ItemElement, ResourceMenu).GetComponent<ItemElement>().InitItem(temp.Key.itemImage, temp.Value);
@@ -56,6 +75,8 @@ public class CurrentSceneInventoryManager : MonoBehaviour
                     break;
             }
         }
+        BookList.OnComplete(() => { bookPanel.SetActive(false); });
+        BookList.Restart();
     }
 
 }

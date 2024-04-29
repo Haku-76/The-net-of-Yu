@@ -23,3 +23,4 @@ MonoBehaviour:
   velocity: 0
   hasGet: 0
   itemClass: 0
+  bookSpr: {fileID: 21300000, guid: f620f1c3ecd3afe4d9ac4357ce03d082, type: 3}

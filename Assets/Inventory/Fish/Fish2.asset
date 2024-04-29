@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: "\u9CD7\u9C7C"
   itemImage: {fileID: 21300000, guid: 66627e3def44837498841e6e0ff5e6d3, type: 3}
-  itemHeld: 0
+  itemHeld: 1
   itemInfo: 
   pollution: 2
   cost: 15
@@ -23,3 +23,4 @@ MonoBehaviour:
   velocity: 0
   hasGet: 0
   itemClass: 0
+  bookSpr: {fileID: 21300000, guid: eb67c72c269ea3544b58b8e70d97e156, type: 3}

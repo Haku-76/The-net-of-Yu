@@ -19,6 +19,7 @@ public class Item : ScriptableObject
 
     public bool hasGet;
     public ItemClass itemClass;
+    public Sprite bookSpr;
 }
 public enum ItemClass
 {
