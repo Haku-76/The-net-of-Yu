@@ -12,6 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c09e45435aae68b449d90b4d5dfc984d, type: 3}
   m_Name: Fish
   m_EditorClassIdentifier: 
-  itemList:
-  - {fileID: 11400000, guid: 3dde8ddbfb99de94ea8e0879563828c8, type: 2}
-  - {fileID: 11400000, guid: 128c30c943a212548a03590982dd070d, type: 2}
+  itemList: []

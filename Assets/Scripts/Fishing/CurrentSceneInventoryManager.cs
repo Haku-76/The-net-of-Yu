@@ -60,9 +60,17 @@ public class CurrentSceneInventoryManager : MonoBehaviour
                         GameObject go=Instantiate(bookElement, bookPanel.transform);
                         go.GetComponent<Image>().sprite= temp.Key.bookSpr;
                         go.transform.localScale = Vector3.zero;
-                        BookList.Append(go.transform.DOScale(Vector3.one, 0.5f));
-                        BookList.AppendInterval(1f);
-                        BookList.Append(go.transform.DOScale(Vector3.zero, 0.3f));
+                        BookList.Append(go.transform.DOScale(Vector3.one, 0.5f).OnComplete(() => 
+                    {
+                            BookList.Pause(); 
+                            go.GetComponent<Button>().onClick.AddListener(() =>
+                            {
+                            BookList.Play();
+                            go.GetComponent<Button>().enabled = false;
+                            }); 
+                    }));
+                        
+                        BookList.Append(go.transform.DOScale(Vector3.zero, 0.3f).OnComplete(()=> { Destroy(go); }));
                     }
                     break;
                 case ItemClass.Resource:

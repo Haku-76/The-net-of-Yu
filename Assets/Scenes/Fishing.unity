@@ -1618,7 +1618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33d7bf8f68234140a7b1fbb0107ed62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 3
+  timeLeft: 30
   countdownText: {fileID: 681491062}
   CheckoutPage: {fileID: 242310220}
 --- !u!114 &986147269
@@ -1633,9 +1633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b73900959d488854993d09c9cab66839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentItemList:
-  - {fileID: 11400000, guid: 3dde8ddbfb99de94ea8e0879563828c8, type: 2}
-  - {fileID: 11400000, guid: f7d0610115ac2444cbe6e6093dc175b7, type: 2}
+  CurrentItemList: []
   FishMenu: {fileID: 700519106}
   GarbageMenu: {fileID: 478875594}
   ResourceMenu: {fileID: 1055045279}
