@@ -489,6 +489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94b123e653e7f6a4ca81401810bd86fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasBoughtBoat: 0
 --- !u!114 &1192318817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -970,6 +971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94b123e653e7f6a4ca81401810bd86fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasBoughtBoat: 0
 --- !u!1 &1849396816
 GameObject:
   m_ObjectHideFlags: 0
@@ -1332,8 +1334,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2041875823}
         m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+        m_MethodName: StoreScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1392,6 +1394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94b123e653e7f6a4ca81401810bd86fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasBoughtBoat: 0
 --- !u!1001 &2051806331
 PrefabInstance:
   m_ObjectHideFlags: 0
