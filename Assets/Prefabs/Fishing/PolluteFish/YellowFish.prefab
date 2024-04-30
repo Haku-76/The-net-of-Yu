@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cad078a264d51c4288f1f339fb9fff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishData: {fileID: 11400000, guid: 9520274be115e5546b94af6f23f2b0fd, type: 2}
+  fishData: {fileID: 11400000, guid: 41eaad11e8570ec4a8d388a978dd443b, type: 2}
   maxSpeed: 5
   minSpeed: 2
   maxRotate: -40

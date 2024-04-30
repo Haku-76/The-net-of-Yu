@@ -21,6 +21,10 @@ MonoBehaviour:
   range: 0
   efficiency: 0
   velocity: 0
-  hasGet: 1
+  hasGet: 0
   itemClass: 2
   bookSpr: {fileID: 0}
+  TurnToSO: {fileID: 0}
+  needPolluteValue: 0
+  pullteFish: {fileID: 0}
+  isPollted: 0

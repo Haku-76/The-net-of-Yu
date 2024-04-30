@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84332a1766292414d80d3511938f2b31, type: 3}
   m_Name: pollute_seaRabbit
   m_EditorClassIdentifier: 
-  itemName: "\u6D77\u5154"
+  itemName: "\u53D8\u5F02\u6D77\u5154"
   itemImage: {fileID: 21300000, guid: c39e8a63046b74d45ab425bd85f781dd, type: 3}
   itemHeld: 0
   itemInfo: 
@@ -27,4 +27,4 @@ MonoBehaviour:
   TurnToSO: {fileID: 0}
   needPolluteValue: 0
   pullteFish: {fileID: 0}
-  isPollted: 0
+  isPollted: 1

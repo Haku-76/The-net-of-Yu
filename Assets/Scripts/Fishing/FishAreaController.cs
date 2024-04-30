@@ -29,21 +29,21 @@ public class FishAreaController : MonoBehaviour
         }
         minShowDistanceY = minHeight-Camera.main.orthographicSize*1.1f-2.6f;
         maxShowDistanceY= maxHeight + Camera.main.orthographicSize * 1.1f;
-        for(int i=0;i<fishControllers.Count;)
+        for(int i=0;i<fishControllers.Count;i++)
         {
             if (polluteData.itemHeld >= fishControllers[i].fishData.needPolluteValue)
             {
                 if (fishControllers[i].fishData.pullteFish != null)
                 {
                     GameObject go=GameObject.Instantiate(fishControllers[i].fishData.pullteFish, transform.GetChild(0));
-                    go.transform.position=transform.position;
-                    go.transform.eulerAngles=transform.eulerAngles;
+                    go.transform.position = fishControllers[i].transform.position;
+                    go.transform.eulerAngles = fishControllers[i].transform.eulerAngles;
                     Destroy(fishControllers[i].gameObject);
                     fishControllers[i] = go.GetComponent<FishController>();
                 }
-                fishControllers[i].gameObject.GetComponentInChildren<SpriteRenderer>().sortingOrder = sorting;
-                sorting++;
             }
+            fishControllers[i].gameObject.GetComponentInChildren<SpriteRenderer>().sortingOrder = sorting;
+            sorting++;
         }
     }
     private void Update()

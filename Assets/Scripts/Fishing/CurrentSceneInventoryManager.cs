@@ -36,13 +36,28 @@ public class CurrentSceneInventoryManager : MonoBehaviour
         bookPanel.SetActive(true) ;
         foreach (Item item in CurrentItemList)
         {
-            if (!Templist.ContainsKey(item))
+            switch (item.itemClass)
             {
-                Templist.Add(item,1);
-            }
-            else
-            {
-                Templist[item]++;
+                case ItemClass.Fish:
+                    if (!Templist.ContainsKey(item))
+                    {
+                        Templist.Add(item, 1);
+                    }
+                    else
+                    {
+                        Templist[item]++;
+                    }
+                    break;
+                case ItemClass.Garbage:
+                    if (!Templist.ContainsKey(item.TurnToSO))
+                    {
+                        Templist.Add(item.TurnToSO, 1);
+                    }
+                    else
+                    {
+                        Templist[item.TurnToSO]++;
+                    }
+                    break;
             }
         }
         foreach(var temp in Templist)
@@ -75,9 +90,9 @@ public class CurrentSceneInventoryManager : MonoBehaviour
                         BookList.Append(go.transform.DOScale(Vector3.zero, 0.3f).OnComplete(()=> { Destroy(go); }));
                     }
                     break;
-                case ItemClass.Garbage:
-                    GameObject.Instantiate(ItemElement, ResourceMenu).GetComponent<ItemElement>().InitItem(temp.Key.TurnToSO.itemImage, temp.Value,0.22f);
-                    ResourceBag.AddItem(temp.Key.TurnToSO, temp.Value);
+                case ItemClass.Resource:
+                    GameObject.Instantiate(ItemElement, ResourceMenu).GetComponent<ItemElement>().InitItem(temp.Key.itemImage, temp.Value,0.22f);
+                    ResourceBag.AddItem(temp.Key, temp.Value);
                     break;
             }
         }

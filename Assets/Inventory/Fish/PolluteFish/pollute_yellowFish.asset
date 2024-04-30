@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84332a1766292414d80d3511938f2b31, type: 3}
   m_Name: pollute_yellowFish
   m_EditorClassIdentifier: 
-  itemName: "\u5C0F\u9EC4\u9C7C"
+  itemName: "\u53D8\u5F02\u5C0F\u9EC4\u9C7C"
   itemImage: {fileID: 21300000, guid: e1089d856382af2488381b51fe9180d8, type: 3}
   itemHeld: 0
   itemInfo: 
@@ -27,4 +27,4 @@ MonoBehaviour:
   TurnToSO: {fileID: 0}
   needPolluteValue: 0
   pullteFish: {fileID: 0}
-  isPollted: 0
+  isPollted: 1

@@ -24,3 +24,7 @@ MonoBehaviour:
   hasGet: 0
   itemClass: 0
   bookSpr: {fileID: 21300000, guid: 5a31551f0cb15844fa30e8f28cb75971, type: 3}
+  TurnToSO: {fileID: 0}
+  needPolluteValue: 0
+  pullteFish: {fileID: 0}
+  isPollted: 0
