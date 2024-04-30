@@ -20,6 +20,10 @@ public class Item : ScriptableObject
     public bool hasGet;
     public ItemClass itemClass;
     public Sprite bookSpr;
+    public Item TurnToSO;
+    public int needPolluteValue;
+    public GameObject pullteFish;
+    public bool isPollted;
 }
 public enum ItemClass
 {

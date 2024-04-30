@@ -9,11 +9,9 @@ public class CurrentSceneInventoryManager : MonoBehaviour
     public static CurrentSceneInventoryManager Instance {get; private set;}
     public List<Item> CurrentItemList;
     public Transform FishMenu;
-    public Transform GarbageMenu;
     public Transform ResourceMenu;
     public GameObject ItemElement;
     public Inventory FishBag;
-    public Inventory GarbageBag;
     public Inventory ResourceBag;
     private Sequence BookList;
     public GameObject bookElement;
@@ -57,6 +55,10 @@ public class CurrentSceneInventoryManager : MonoBehaviour
                     if (!temp.Key.hasGet)
                     {
                         temp.Key.hasGet = true;
+                        if (temp.Key.isPollted)
+                        {
+                            continue;
+                        }
                         GameObject go=Instantiate(bookElement, bookPanel.transform);
                         go.GetComponent<Image>().sprite= temp.Key.bookSpr;
                         go.transform.localScale = Vector3.zero;
@@ -73,14 +75,9 @@ public class CurrentSceneInventoryManager : MonoBehaviour
                         BookList.Append(go.transform.DOScale(Vector3.zero, 0.3f).OnComplete(()=> { Destroy(go); }));
                     }
                     break;
-                case ItemClass.Resource:
-                    GameObject.Instantiate(ItemElement, ResourceMenu).GetComponent<ItemElement>().InitItem(temp.Key.itemImage, temp.Value,0.22f);
-
-                    ResourceBag.AddItem(temp.Key, temp.Value);
-                    break;
                 case ItemClass.Garbage:
-                    GameObject.Instantiate(ItemElement, GarbageMenu).GetComponent<ItemElement>().InitItem(temp.Key.itemImage, temp.Value,0.22f);
-                    GarbageBag.AddItem(temp.Key, temp.Value);
+                    GameObject.Instantiate(ItemElement, ResourceMenu).GetComponent<ItemElement>().InitItem(temp.Key.TurnToSO.itemImage, temp.Value,0.22f);
+                    ResourceBag.AddItem(temp.Key.TurnToSO, temp.Value);
                     break;
             }
         }
