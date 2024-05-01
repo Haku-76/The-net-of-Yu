@@ -14,10 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: "\u73BB\u7483"
   itemImage: {fileID: 21300000, guid: 6afb43e96aa0bc147865e22610adb9e1, type: 3}
-  itemHeld: 34
+  itemHeld: 1
   itemInfo: "\u73BB\u7483"
   pollution: 0
   cost: 
   range: 0
   efficiency: 0
   velocity: 0
+  hasGet: 0
+  itemClass: 2
+  bookSpr: {fileID: 0}
+  TurnToSO: {fileID: 0}
+  needPolluteValue: 0
+  pullteFish: {fileID: 0}
+  isPollted: 0

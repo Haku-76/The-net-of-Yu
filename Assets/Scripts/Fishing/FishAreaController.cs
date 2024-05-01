@@ -9,6 +9,8 @@ public class FishAreaController : MonoBehaviour
     private float minShowDistanceY;
     private float maxShowDistanceY;
     private int sorting = 30;
+    [SerializeField]
+    private Item polluteData;
     void Start()
     {
         fishControllers = new List<FishController>(transform.GetChild(0).GetComponentsInChildren<FishController>());
@@ -25,11 +27,22 @@ public class FishAreaController : MonoBehaviour
                 maxHeight=t.y+transform.position.y;
             }
         }
-        minShowDistanceY = minHeight-Camera.main.orthographicSize*1.1f;
+        minShowDistanceY = minHeight-Camera.main.orthographicSize*1.1f-2.6f;
         maxShowDistanceY= maxHeight + Camera.main.orthographicSize * 1.1f;
-        foreach (var t in fishControllers)
+        for(int i=0;i<fishControllers.Count;i++)
         {
-            t.gameObject.GetComponentInChildren<SpriteRenderer>().sortingOrder = sorting;
+            if (polluteData.itemHeld >= fishControllers[i].fishData.needPolluteValue)
+            {
+                if (fishControllers[i].fishData.pullteFish != null)
+                {
+                    GameObject go=GameObject.Instantiate(fishControllers[i].fishData.pullteFish, transform.GetChild(0));
+                    go.transform.position = fishControllers[i].transform.position;
+                    go.transform.eulerAngles = fishControllers[i].transform.eulerAngles;
+                    Destroy(fishControllers[i].gameObject);
+                    fishControllers[i] = go.GetComponent<FishController>();
+                }
+            }
+            fishControllers[i].gameObject.GetComponentInChildren<SpriteRenderer>().sortingOrder = sorting;
             sorting++;
         }
     }

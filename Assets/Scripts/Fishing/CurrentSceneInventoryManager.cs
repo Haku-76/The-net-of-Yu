@@ -9,11 +9,9 @@ public class CurrentSceneInventoryManager : MonoBehaviour
     public static CurrentSceneInventoryManager Instance {get; private set;}
     public List<Item> CurrentItemList;
     public Transform FishMenu;
-    public Transform GarbageMenu;
     public Transform ResourceMenu;
     public GameObject ItemElement;
     public Inventory FishBag;
-    public Inventory GarbageBag;
     public Inventory ResourceBag;
     private Sequence BookList;
     public GameObject bookElement;
@@ -38,13 +36,28 @@ public class CurrentSceneInventoryManager : MonoBehaviour
         bookPanel.SetActive(true) ;
         foreach (Item item in CurrentItemList)
         {
-            if (!Templist.ContainsKey(item))
+            switch (item.itemClass)
             {
-                Templist.Add(item,1);
-            }
-            else
-            {
-                Templist[item]++;
+                case ItemClass.Fish:
+                    if (!Templist.ContainsKey(item))
+                    {
+                        Templist.Add(item, 1);
+                    }
+                    else
+                    {
+                        Templist[item]++;
+                    }
+                    break;
+                case ItemClass.Garbage:
+                    if (!Templist.ContainsKey(item.TurnToSO))
+                    {
+                        Templist.Add(item.TurnToSO, 1);
+                    }
+                    else
+                    {
+                        Templist[item.TurnToSO]++;
+                    }
+                    break;
             }
         }
         foreach(var temp in Templist)
@@ -52,26 +65,34 @@ public class CurrentSceneInventoryManager : MonoBehaviour
             switch (temp.Key.itemClass)
             {
                 case ItemClass.Fish:
-                    GameObject.Instantiate(ItemElement, FishMenu).GetComponent<ItemElement>().InitItem(temp.Key.itemImage, temp.Value);
+                    GameObject.Instantiate(ItemElement, FishMenu).GetComponent<ItemElement>().InitItem(temp.Key.itemImage, temp.Value,0.4f);
                     FishBag.AddItem(temp.Key, temp.Value);
                     if (!temp.Key.hasGet)
                     {
                         temp.Key.hasGet = true;
+                        if (temp.Key.isPollted)
+                        {
+                            continue;
+                        }
                         GameObject go=Instantiate(bookElement, bookPanel.transform);
                         go.GetComponent<Image>().sprite= temp.Key.bookSpr;
                         go.transform.localScale = Vector3.zero;
-                        BookList.Append(go.transform.DOScale(Vector3.one, 0.5f));
-                        BookList.AppendInterval(1f);
-                        BookList.Append(go.transform.DOScale(Vector3.zero, 0.3f));
+                        BookList.Append(go.transform.DOScale(Vector3.one, 0.5f).OnComplete(() => 
+                    {
+                            BookList.Pause(); 
+                            go.GetComponent<Button>().onClick.AddListener(() =>
+                            {
+                            BookList.Play();
+                            go.GetComponent<Button>().enabled = false;
+                            }); 
+                    }));
+                        
+                        BookList.Append(go.transform.DOScale(Vector3.zero, 0.3f).OnComplete(()=> { Destroy(go); }));
                     }
                     break;
                 case ItemClass.Resource:
-                    GameObject.Instantiate(ItemElement, ResourceMenu).GetComponent<ItemElement>().InitItem(temp.Key.itemImage, temp.Value);
+                    GameObject.Instantiate(ItemElement, ResourceMenu).GetComponent<ItemElement>().InitItem(temp.Key.itemImage, temp.Value,0.22f);
                     ResourceBag.AddItem(temp.Key, temp.Value);
-                    break;
-                case ItemClass.Garbage:
-                    GameObject.Instantiate(ItemElement, GarbageMenu).GetComponent<ItemElement>().InitItem(temp.Key.itemImage, temp.Value);
-                    GarbageBag.AddItem(temp.Key, temp.Value);
                     break;
             }
         }

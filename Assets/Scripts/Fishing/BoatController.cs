@@ -137,12 +137,15 @@ public class BoatController : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        isCollidering=true;
-        rb.velocity = Vector2.zero;
-        rb.freezeRotation = true;
-        cameraShake.CameraShaking();
-        Invoke("ChangeColliderState",0.5f);
-        rb.AddForce((transform.position - collision.transform.position).normalized*0.7f, ForceMode2D.Impulse);
+        if (collision.gameObject.tag== "Environment")
+        {
+            isCollidering = true;
+            rb.velocity = Vector2.zero;
+            rb.freezeRotation = true;
+            cameraShake.CameraShaking();
+            Invoke("ChangeColliderState", 0.5f);
+            rb.AddForce((transform.position - collision.transform.position).normalized * 0.7f, ForceMode2D.Impulse);
+        }
     }
     private void ChangeColliderState()
     {

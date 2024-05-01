@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - FxTemporaire
   - FishWeb
+  - Environment
   layers:
   - Default
   - TransparentFX
