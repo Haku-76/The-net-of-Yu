@@ -1589,7 +1589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33d7bf8f68234140a7b1fbb0107ed62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 50
+  timeLeft: 10
   countdownText: {fileID: 681491062}
   CheckoutPage: {fileID: 242310220}
 --- !u!114 &986147269
