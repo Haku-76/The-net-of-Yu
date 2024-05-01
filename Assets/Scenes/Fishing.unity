@@ -1589,9 +1589,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33d7bf8f68234140a7b1fbb0107ed62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 10
+  timeLeft: 60
   countdownText: {fileID: 681491062}
   CheckoutPage: {fileID: 242310220}
+  bg: {fileID: 2035851547}
+  pollutedBg: {fileID: 21300000, guid: 7f5f3ceb7533b57498a5f2293bd59f21, type: 3}
+  polluteData: {fileID: 11400000, guid: cfe28d1489f205d47a700f29cf14e8fd, type: 2}
 --- !u!114 &986147269
 MonoBehaviour:
   m_ObjectHideFlags: 0

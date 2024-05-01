@@ -25,6 +25,6 @@ MonoBehaviour:
   itemClass: 0
   bookSpr: {fileID: 21300000, guid: f620f1c3ecd3afe4d9ac4357ce03d082, type: 3}
   TurnToSO: {fileID: 0}
-  needPolluteValue: 10
+  needPolluteValue: 0
   pullteFish: {fileID: 0}
   isPollted: 0
