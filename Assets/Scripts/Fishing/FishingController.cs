@@ -9,6 +9,12 @@ public class FishingController : MonoBehaviour
     [Space(15)]
     public GameObject CheckoutPage;
     private bool gameover=false;
+    [SerializeField]
+    private SpriteRenderer bg;
+    [SerializeField]
+    private Sprite pollutedBg;
+    [SerializeField]
+    private Item polluteData;
     public static FishingController Instance
     {
         get;private set;
@@ -16,6 +22,13 @@ public class FishingController : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+    }
+    private void Start()
+    {
+        if (polluteData.itemHeld>10)
+        {
+            bg.sprite = pollutedBg;
+        }
     }
     private void Update()
     {
