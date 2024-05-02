@@ -400,7 +400,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1974749783842263294, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: startNode
-      value: Start
+      value: kaiyu
       objectReference: {fileID: 0}
     - target: {fileID: 1974749783842263294, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: startAutomatically
@@ -488,7 +488,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: loadSprites.Array.size
-      value: 16
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: loadSprites.Array.data[0]
@@ -554,6 +554,38 @@ PrefabInstance:
       propertyPath: loadSprites.Array.data[15]
       value: 
       objectReference: {fileID: 21300000, guid: 10d9a778ec1a86f48afb8002f15f88df, type: 3}
+    - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: loadSprites.Array.data[16]
+      value: 
+      objectReference: {fileID: 21300000, guid: f6613feb04944ec48a8d5f2477c2779a, type: 3}
+    - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: loadSprites.Array.data[17]
+      value: 
+      objectReference: {fileID: 21300000, guid: 585f7e965842e1040a6528419699228c, type: 3}
+    - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: loadSprites.Array.data[18]
+      value: 
+      objectReference: {fileID: 21300000, guid: 7aed7bab81a906440ae43807653e03d2, type: 3}
+    - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: loadSprites.Array.data[19]
+      value: 
+      objectReference: {fileID: 21300000, guid: 596ea1a35be2885458efeb044858c929, type: 3}
+    - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: loadSprites.Array.data[20]
+      value: 
+      objectReference: {fileID: 21300000, guid: d88e0a27ec1457a4a8c7c47184f578ca, type: 3}
+    - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: loadSprites.Array.data[21]
+      value: 
+      objectReference: {fileID: 21300000, guid: fbde35ee372a8c94eb5622ee462112b9, type: 3}
+    - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: loadSprites.Array.data[22]
+      value: 
+      objectReference: {fileID: 21300000, guid: b43b8de7af576f04aba04e3d94f19b79, type: 3}
+    - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: loadSprites.Array.data[23]
+      value: 
+      objectReference: {fileID: 21300000, guid: 99833eebeb9ce5d4c97cf18f2f016eb7, type: 3}
     - target: {fileID: 3549739876377949297, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
@@ -601,7 +633,7 @@ PrefabInstance:
     - target: {fileID: 4943031000947819471, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 47fe42fc6d946ab4e8255d4212196b21, type: 2}
+      objectReference: {fileID: 11400000, guid: 0c81c20ff29c17e4c8a5fad43f173a59, type: 2}
     - target: {fileID: 4943031000947819471, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_fontColor.b
       value: 0.19215687
@@ -617,7 +649,7 @@ PrefabInstance:
     - target: {fileID: 4943031000947819471, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2200132102344065627, guid: 47fe42fc6d946ab4e8255d4212196b21, type: 2}
+      objectReference: {fileID: 637844521425562050, guid: 0c81c20ff29c17e4c8a5fad43f173a59, type: 2}
     - target: {fileID: 4943031000947819471, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4281416769

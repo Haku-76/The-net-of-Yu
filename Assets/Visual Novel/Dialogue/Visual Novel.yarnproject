@@ -5,7 +5,9 @@
   ],
   "excludeFiles": [],
   "localisation": {
-    "zh-Hans": {},
+    "zh-Hans": {
+      "strings": "..\\..\\Font\\7000 Chinese characters \u002B symbols \u002B English character set.txt"
+    },
     "en": {}
   },
   "baseLanguage": "zh-Hant",

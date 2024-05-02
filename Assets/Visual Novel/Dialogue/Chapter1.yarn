@@ -14,7 +14,7 @@ position: -230,-1019
 // start playing audioclip "ambient_birds" at 50% volume, loop forever
 //<<PlayAudio ambient_birds 0.5 loop>>
 
-<<Act 郁 yu left 0.4 red>>
+<<Act 郁 suitUpYu left 0.4 red>>
 
 郁: 那里，就是疍家，那个从未了解过的家乡。
 
@@ -396,14 +396,16 @@ position: 61,239
 安阿姨: 也成。
 
 <<Scene squareDuring>>
-<<Act 村民A art right 0.1 black>>
+<<Act 村民A art center 0.1 black>>
 村民A: 哟，吴阿爷来了啊，这位是......你家孙女？
 <<Hide 安阿姨>>
 <<Act 吴阿爷 wu right 0.3 red>>
 郁: 叔叔好。
 村民A: 欸，好乖好乖！吴阿爷身体怎么样啦。
 吴阿爷: 好多啦好多啦，孙女回来了我开心啊，身体也就好起来啦。
-<<Act 陈大叔 chen center 0.4 black>>
+<<Hide 吴阿爷>>
+<<Hide 村民A>>
+<<Act 陈大叔 chen right 0.4 black>>
 陈大叔: 郁来啦，过来坐啊。
 郁: 好。
 陈大叔: 放开了吃啊，今天咱都要玩的开心！
@@ -414,38 +416,73 @@ position: 61,239
 郁: 哦！好期待啊！
 安阿姨: 没有没有，我先过去啦！
 <<Move 安阿姨 1.25 0.4 0.5>>
+//<<Move 陈大叔 right 0.4 0.5>>
 陈大叔: 咱们节日不多，很长时间才能过一次节，当然要好好庆祝啊！
 陈大叔: 这开渔节啊，也是给接下来出海讨个吉利。
 陈大叔: 等下还有好些活动呢。
 陈大叔: 哦呦，表演要开始了！
-陈大叔: 好！
-郁: 好！
-陈大叔: 吃也吃饱了，接下来就要去海边咯。
+<<Hide 陈大叔>>
+<<Hide 郁>>
 
 <<Fade black 0.0 1.0 2.0>>
 <<Fade black 1.0 0.0 2.0>>
-<<HideAll>>
+<<Scene show>>
+<<wait 2>>
+<<Fade black 0.0 1.0 2.0>>
+<<Fade black 1.0 0.0 2.0>>
+<<Scene lion>>
+<<wait 2>>
+<<Fade black 0.0 1.0 2.0>>
+<<Fade black 1.0 0.0 2.0>>
+<<Scene dragon>>
+<<wait 2>>
+
+<<Act 陈大叔 chen right 0.4 black>>
 <<Act 郁 yu left 0.4 white>>
-<<Act 陈大叔 chen center 0.4 black>>
-<<Act 吴阿爷 wu right 0.3 red>>
+陈大叔: 好！
+郁: 好！
+陈大叔: 吃也吃饱了，接下来就要去海边咯。
+<<Fade black 0.0 1.0 2.0>>
+<<Fade black 1.0 0.0 2.0>>
+//<<HideAll>>
+//<<Act 郁 yu left 0.4 white>>
+//<<Act 陈大叔 chen center 0.4 black>>
 <<Scene yupai>>
 陈大叔: 前面那个人是“请公婆”，代表咱求平安的。
 郁: 好像在说些啥......动作看起来是在撒纸钱......还有倒东西到海里去？
 陈大叔: 那是孝敬龙王的，保佑咱平安丰收。
+<<Act 吴阿爷 wu center 0.3 red>>
 吴阿爷: 来，郁，这条鱼，等下交给你，把它放回海里。
 郁: 这也是一个环节？
 陈大叔: 是咧，小娃娃都抢着要放呢。
+//<<Hide All>>
+<<Hide 陈大叔>>
+<<Hide 郁>>
+<<Hide 吴阿爷>>
+<<Scene bigFish>>
+<<wait 0.5>>
 郁: 这么久了还不游走？
 陈大叔: 哟，挺通人性的嘞，在感谢你，不肯走了吧。
 郁: （记得好像因为不适应水域的环境，或因为一些关键的环境因素发生了变化，想要尝试逃离环境，才会往河岸边游。但是这应该就是当地捕捞上来的鱼啊......真奇怪，不应该啊......）
 陈大叔: 好嘞，等下就要开船仪式了，来，我带你去找你的船。
 郁: 好！
+<<Fade black 0.0 1.0 2.0>>
+<<Fade black 1.0 0.0 2.0>>
+<<Scene byeNPC>>
 陈大叔: 今天出去，准会大丰收，一路顺风啊郁小妹！
 吴阿爷: 收获不多也没事啊，注意安全，早些回来啊！
+<<Scene byeYu>>
 郁: 知道啦！
 
+<<wait 1>>
+<<Fade black 0.0 1.0 2.0>>
+<<Fade black 1.0 0.0 2.0>>
+
+<<Scene sail>>
+<<wait 3>>
+<<Fade black 0.0 1.0 2.0>>
+<<Fade black 1.0 0.0 2.0>>
 <<HideAll>>
-//缺少图片
 <<jump Chapter4>>
 ===
 
