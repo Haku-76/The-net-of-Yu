@@ -288,7 +288,7 @@ position: -286,19
         ->否
             <<HideAll>>
             <<jump chenTu>>
-            <<HideAll>>
+            <<NextScene DialogueCanvas MainMenu>>
         ->是<<if $money >= 600>>
             <<BuyShip DialogueCanvas>>
             陈大叔: 恭喜啊孩子，有自己的船了，正好赶上开渔节一起庆祝吧哈哈哈！
@@ -564,7 +564,8 @@ position: 67,515
 <<Fade black 0.0 1.0 2.0>>
 <<Fade black 1.0 0.0 2.0>>
 <<HideAll>>
-<<jump Chapter5>>
+//<<jump Chapter5>>
+<<NextScene DialogueCanvas MainMenu>>
 ===
 
 

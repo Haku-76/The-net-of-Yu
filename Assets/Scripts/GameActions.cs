@@ -13,10 +13,12 @@ public class GameActions : MonoBehaviour
     public Item pollution;
     private static int pollutionNum;
     private static int jumpPoint;
+    public GameObject levelLoader;
 
     void Awake()
     {
         dialogueRunner.AddCommandHandler<int>("adjustCoin", AdjustCoin);
+        levelLoader = GameObject.Find("LevelLoader").gameObject;
     }
 
     private void AdjustCoin(int changeValue)
@@ -53,6 +55,7 @@ public class GameActions : MonoBehaviour
     [YarnCommand("NextScene")]
     public void NextScene(string sceneName)
     {
+        //StartCoroutine(levelLoader.GetComponent<LevelLoader>().LoadLevel(sceneName));
         SceneManager.LoadScene(sceneName);
     }
 
