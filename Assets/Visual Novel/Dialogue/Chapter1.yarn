@@ -29,7 +29,7 @@ position: -230,-1019
 <<Fade black 0.0 1.0 2.0>>
 <<Fade black 1.0 0.0 2.0>>
 
-<<Scene home-day>>
+<<Scene pier>>
 
 <<Act 安阿姨 an right 0.4 blue>>
 
