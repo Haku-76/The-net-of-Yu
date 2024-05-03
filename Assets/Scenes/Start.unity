@@ -512,8 +512,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "SE\u97F3\u91CF"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 00f0805bcf673924ea4d9b646ac78359, type: 2}
-  m_sharedMaterial: {fileID: -6819398106852035383, guid: 00f0805bcf673924ea4d9b646ac78359, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0c81c20ff29c17e4c8a5fad43f173a59, type: 2}
+  m_sharedMaterial: {fileID: -6819398106852035383, guid: 0c81c20ff29c17e4c8a5fad43f173a59, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -744,14 +744,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 402918201}
         m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+        m_MethodName: StoreScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: MainMenu
+          m_StringArgument: Dialogue
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &402918201
@@ -766,6 +766,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94b123e653e7f6a4ca81401810bd86fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasBoughtBoat: 0
+  levelLoader: {fileID: 0}
 --- !u!1 &592082725
 GameObject:
   m_ObjectHideFlags: 0
@@ -1182,8 +1184,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "BGM\u97F3\u91CF"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 00f0805bcf673924ea4d9b646ac78359, type: 2}
-  m_sharedMaterial: {fileID: -6819398106852035383, guid: 00f0805bcf673924ea4d9b646ac78359, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0c81c20ff29c17e4c8a5fad43f173a59, type: 2}
+  m_sharedMaterial: {fileID: -6819398106852035383, guid: 0c81c20ff29c17e4c8a5fad43f173a59, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1952,8 +1954,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u9F20\u6807\u70B9\u51FB\u4EFB\u610F\u4F4D\u7F6E"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 00f0805bcf673924ea4d9b646ac78359, type: 2}
-  m_sharedMaterial: {fileID: -6819398106852035383, guid: 00f0805bcf673924ea4d9b646ac78359, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0c81c20ff29c17e4c8a5fad43f173a59, type: 2}
+  m_sharedMaterial: {fileID: -6819398106852035383, guid: 0c81c20ff29c17e4c8a5fad43f173a59, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
