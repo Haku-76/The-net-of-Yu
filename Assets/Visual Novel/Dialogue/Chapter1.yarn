@@ -14,7 +14,7 @@ position: -230,-1019
 // start playing audioclip "ambient_birds" at 50% volume, loop forever
 //<<PlayAudio ambient_birds 0.5 loop>>
 
-<<Act 郁 suitUpYu left 0.4 red>>
+<<Scene yuPack>>
 
 郁: 那里，就是疍家，那个从未了解过的家乡。
 
@@ -30,6 +30,10 @@ position: -230,-1019
 <<Fade black 1.0 0.0 2.0>>
 
 <<Scene pier>>
+
+<<Act 郁 suitUpYu left 0.4 red>>
+
+<<PlayAudio footstep 1.0>>
 
 <<Act 安阿姨 an right 0.4 blue>>
 
@@ -60,9 +64,12 @@ position: -230,-1019
 <<Fade black 0.0 1.0 2.0>>
 <<Fade black 1.0 0.0 2.0>>
 
-<<Scene home-night>>
-
+<<Scene home-day>>
+<<PlayAudio knockDoor>>
 安阿姨: 吴阿爷！你家孙女回来拉！
+
+<<wait 1>>
+<<PlayAudio door>>
 
 <<Act 吴阿爷 wu center 0.3 white>>
 
@@ -82,7 +89,10 @@ position: -230,-1019
 
 <<Move 安阿姨 1.25 0.4 0.5>>
 
+<<PlayAudio closeDoor>>
+
 <<Move 吴阿爷 right 0.3 0.5>>
+//<<PlayAudio foodstep>>
 //<<PlayAudio closeDoor>>
 
 吴阿爷: 孩子啊，这几年，受了不少苦吧......
@@ -117,7 +127,7 @@ position: -230,-1019
 
 郁: 爷爷多注意身体啊。
 
-//<<PlayAudio knokDoor>>
+<<PlayAudio knockDoor>>
 
 <<Move 安阿姨 center 0.4 0.5>>
 
@@ -129,6 +139,7 @@ position: -230,-1019
 <<Fade black 0.0 1.0 2.0>>
 
 <<HideAll>>
+<<Hide 安阿姨>>
 
 <<Fade black 1.0 0.0 2.0>>
 
@@ -177,17 +188,20 @@ position: -291,-489
 
 <<Scene squareBefore>>
 <<Act 安阿姨 an right 0.4 blue>>
-
 <<Act 郁 yu left 0.4 red>>
 
 安阿姨: 还有啥需要帮助的吗，直接告诉阿姨就好嗷。
 
 ->阿姨又做了啥好吃的啊？
-    安阿姨: 多着呢，艇仔粥、鱼生片、紫苏炒田螺、咸鱼腊肉蒸芋头、
-    安阿姨: 疍家酒、沙虫、盘糕（疍家糕）、鱼露、鱼虾酱、鱼虾糟、
-    安阿姨: 糯米团子、“气鼓鱼”粥、猪脚姜、疍家菜粽、酸梅鸭、煎鱼饼、椰香鱿鱼...
-    郁: ...
-    <<HideAll>>
+    安阿姨: 多着呢
+    <<Scene food>>
+    <<Hide 郁>>
+    <<Hide 安阿姨>>
+    <<wait 2>>
+    //艇仔粥、鱼生片、紫苏炒田螺、咸鱼腊肉蒸芋头、
+    //疍家酒、沙虫、盘糕（疍家糕）、鱼露、鱼虾酱、鱼虾糟、
+    //糯米团子、“气鼓鱼”粥、猪脚姜、疍家菜粽、酸梅鸭、煎鱼饼、椰香鱿鱼...
+    *每天来可以解锁一些事物图鉴哦*
     <<jump anTu>>
 -> 阿姨您知道什么关于我父母的事情吗？<<if $hasVisitedOption2 == false>>
     安阿姨: 我知道的消息不多啊，只在其他村里人闲聊的时候听到几耳朵。
@@ -243,14 +257,18 @@ position: -274,-230
 <<Scene ChomeDay>>
 <<Act 安阿姨 an right 0.4 blue>>
 <<Act 郁 yu left 0.4 red>>
-<<Act 陈大叔 chen center 0.4 white>>
 
+<<PlayAudio knockDoor>>
 安阿姨: 陈大叔！在家吗？吴阿爷家那个小妹妹来咯！
+<<wait 1>>
+<<Act 陈大叔 chen center 0.4 white>>
+<<PlayAudio door>>
 陈大叔:唉！这儿呢！
 郁: 陈大叔好！
 安阿姨:这孩子叫郁，来学下咋抓鱼。那我就先回去了啊。
 
 <<Move 安阿姨 1.25 0.4 1>>
+<<PlayAudio closeDoor>>
 <<Move 陈大叔 right 0.4 1>>
 陈大叔:欸好，来吧孩子。
 陈大叔:钓到的鱼可以直接卖给我，也可以拿到我这里来加工，我会给你优惠啊。
@@ -277,7 +295,7 @@ position: -286,19
 <<Scene ChomeDay>>
 <<Act 郁 yu left 0.4 red>>
 <<Act 陈大叔 chen right 0.4 white>>
-<<declare $money = 700>>
+<<declare $money = 0>>
 
 陈大叔: 有什么需要帮助的吗？
 // -> 可以帮我加工一下吗？
@@ -289,9 +307,11 @@ position: -286,19
             <<HideAll>>
             <<jump chenTu>>
             <<NextScene DialogueCanvas MainMenu>>
-        ->是<<if $money >= 600>>
+        ->是<<if checkCoin() >= 600>>
             <<BuyShip DialogueCanvas>>
             陈大叔: 恭喜啊孩子，有自己的船了，正好赶上开渔节一起庆祝吧哈哈哈！
+            <<Fade black 0.0 1.0 2.0>>
+            <<Fade black 1.0 0.0 2.0>>
             <<Scene home-day>>
             <<Hide 陈大叔>>
             <<Act 吴阿爷 wu right 0.3 red>>
@@ -304,8 +324,9 @@ position: -286,19
 // -> 我想购买一些东西
 // -> 出售鱼
 -> 没什么了
+    <<NextScene DialogueCanvas MainMenu>>
     <<HideAll>>
-    <<jump empty>>
+    //<<jump empty>>
 ===
 
 title: empty
@@ -321,6 +342,7 @@ position: 53,23
 ---
 
 <<Scene squareBefore>>
+<<PlayAudio bustle 0.2 loop>>
 <<Act 郁 yu left 0.4 red>>
 郁: 今天怎么这么热闹，开渔节不是还有几天吗？
 
@@ -338,12 +360,13 @@ position: 53,23
 吴阿爷: 嗯，天色不早了，大家早些回家，明天晚上前把票递了吧。
 
 <<Scene home-day>>
+<<StopAudio>>
 郁: 爷爷，您觉得这事......
 吴阿爷: 唉，这售价确实比直接出售要高的多......
 郁: 嗯。
-你决定对开加工厂这件事：
+你决定对开加工厂这件事表示：
 -> 赞成
-    <<addPollution DialogueCanvas 2>>
+    <<addPollution DialogueCanvas 3>>
 -> 反对
     <<addPollution DialogueCanvas -1>>
 -> 弃权
@@ -370,6 +393,7 @@ position: 61,239
 ---
 
 <<Scene home-day>>
+<<PlayAudio bustle 0.1 loop>>
 <<Act 郁 yu left 0.4 white>>
 郁: 怎么回事？
 
@@ -396,6 +420,7 @@ position: 61,239
 安阿姨: 也成。
 
 <<Scene squareDuring>>
+<<PlayAudio bustle 0.2 loop>>
 <<Act 村民A art center 0.1 black>>
 村民A: 哟，吴阿爷来了啊，这位是......你家孙女？
 <<Hide 安阿姨>>
@@ -424,6 +449,7 @@ position: 61,239
 <<Hide 陈大叔>>
 <<Hide 郁>>
 
+<<PlayAudio bustle 0.8 loop>>
 <<Fade black 0.0 1.0 2.0>>
 <<Fade black 1.0 0.0 2.0>>
 <<Scene show>>
@@ -439,6 +465,7 @@ position: 61,239
 
 <<Act 陈大叔 chen right 0.4 black>>
 <<Act 郁 yu left 0.4 white>>
+<<PlayAudio cheer>>
 陈大叔: 好！
 郁: 好！
 陈大叔: 吃也吃饱了，接下来就要去海边咯。
@@ -448,6 +475,7 @@ position: 61,239
 //<<Act 郁 yu left 0.4 white>>
 //<<Act 陈大叔 chen center 0.4 black>>
 <<Scene yupai>>
+<<StopAudio>>
 陈大叔: 前面那个人是“请公婆”，代表咱求平安的。
 郁: 好像在说些啥......动作看起来是在撒纸钱......还有倒东西到海里去？
 陈大叔: 那是孝敬龙王的，保佑咱平安丰收。
@@ -483,7 +511,9 @@ position: 61,239
 <<Fade black 0.0 1.0 2.0>>
 <<Fade black 1.0 0.0 2.0>>
 <<HideAll>>
-<<jump Chapter4>>
+//<<jump Chapter4>>
+<<setJumpPoint DialogueCanvas 2>>
+<<NextScene DialogueCanvas Fishing>>
 ===
 
 title: Chapter4

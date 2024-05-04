@@ -612,7 +612,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1974749783842263294, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: startNode
-      value: Start
+      value: chenTu
       objectReference: {fileID: 0}
     - target: {fileID: 1974749783842263294, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: startAutomatically
@@ -696,12 +696,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: loadAudio.Array.size
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: loadSprites.Array.size
-      value: 24
+      value: 26
       objectReference: {fileID: 0}
+    - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: loadAudio.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: c22a13f43fe57074db2aea51f7d5e339, type: 3}
+    - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: loadAudio.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 463a9e95e50b014449e670d7bfaf991a, type: 3}
+    - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: loadAudio.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: d05e3c50182efb841afba3de9abb4c44, type: 3}
+    - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: loadAudio.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3bc62e7d04ce9424784b6a8deacf0fbf, type: 3}
+    - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: loadAudio.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: dc1a5c61404721546896af80f8183281, type: 3}
+    - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: loadAudio.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 917e29ea29347934a865814b9624de87, type: 3}
     - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: loadSprites.Array.data[0]
       value: 
@@ -798,6 +822,14 @@ PrefabInstance:
       propertyPath: loadSprites.Array.data[23]
       value: 
       objectReference: {fileID: 21300000, guid: 99833eebeb9ce5d4c97cf18f2f016eb7, type: 3}
+    - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: loadSprites.Array.data[24]
+      value: 
+      objectReference: {fileID: 21300000, guid: e7773b916ae93cd46865fc4da254edd1, type: 3}
+    - target: {fileID: 3406737719070115681, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: loadSprites.Array.data[25]
+      value: 
+      objectReference: {fileID: 21300000, guid: cc3eb5cc4ed0a94449c0a9999aa3b3a4, type: 3}
     - target: {fileID: 3549739876377949297, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_FontData.m_Font
       value: 

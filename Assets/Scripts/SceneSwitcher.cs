@@ -8,6 +8,7 @@ public class SceneSwitcher : MonoBehaviour
     public bool hasBoughtBoat = false;
     public GameObject levelLoader;
     //public DialogueRunner dialogueRunner;
+    private int timeOfDay = 0;
 
     private void Start()
     {
@@ -16,6 +17,7 @@ public class SceneSwitcher : MonoBehaviour
     public void LoadScene(string sceneName)
     {
         StartCoroutine(levelLoader.GetComponent<LevelLoader>().LoadLevel(sceneName));
+        UpdateTime();
     }
 
     public void StoreScene()
@@ -28,5 +30,10 @@ public class SceneSwitcher : MonoBehaviour
         {
             SceneManager.LoadScene("Store");
         }
+    }
+
+    public void UpdateTime()
+    {
+        timeOfDay = (timeOfDay == 0) ? 1 : 0;
     }
 }

@@ -13,12 +13,16 @@ public class GameActions : MonoBehaviour
     public Item pollution;
     private static int pollutionNum;
     private static int jumpPoint;
-    public GameObject levelLoader;
+    //public GameObject levelLoader;
 
     void Awake()
     {
         dialogueRunner.AddCommandHandler<int>("adjustCoin", AdjustCoin);
-        levelLoader = GameObject.Find("LevelLoader").gameObject;
+        //levelLoader = GameObject.Find("LevelLoader").gameObject;
+    }
+    private void Start()
+    {
+        print("itemHeld" + coin.itemHeld);
     }
 
     private void AdjustCoin(int changeValue)
@@ -29,6 +33,7 @@ public class GameActions : MonoBehaviour
     private void Update()
     {
         coinNum = coin.itemHeld;
+        //print("itemHeld" + coin.itemHeld);
         
         //pollutionNum = pollution.itemHeld;
     }
@@ -43,6 +48,7 @@ public class GameActions : MonoBehaviour
     [YarnFunction("checkCoin")]
     public static int checkCoin()
     {
+        print("½ðÇ®×Ü¶î" + coinNum);
         return coinNum;
     }
 
