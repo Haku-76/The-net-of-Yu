@@ -1481,7 +1481,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1000010894660052, guid: 3b11136cfd0d23540940791a20f3e1de, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3447894588705092, guid: 3b11136cfd0d23540940791a20f3e1de, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1501,7 +1501,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114000012848874552, guid: 3b11136cfd0d23540940791a20f3e1de, type: 3}
       propertyPath: currentPaper
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198214254308688801, guid: 3b11136cfd0d23540940791a20f3e1de, type: 3}
       propertyPath: m_fontAsset
@@ -1537,7 +1537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224000010976852724, guid: 3b11136cfd0d23540940791a20f3e1de, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.0000015408286
+      value: -0.00000006104074
       objectReference: {fileID: 0}
     - target: {fileID: 224000012149926270, guid: 3b11136cfd0d23540940791a20f3e1de, type: 3}
       propertyPath: m_Pivot.x
@@ -1641,11 +1641,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 225000013765485012, guid: 3b11136cfd0d23540940791a20f3e1de, type: 3}
       propertyPath: m_Alpha
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 225000013765485012, guid: 3b11136cfd0d23540940791a20f3e1de, type: 3}
       propertyPath: m_BlocksRaycasts
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 413738291999698597, guid: 3b11136cfd0d23540940791a20f3e1de, type: 3}
       propertyPath: m_fontAsset
@@ -2249,11 +2249,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5869249823975529526, guid: 3b11136cfd0d23540940791a20f3e1de, type: 3}
       propertyPath: m_Alpha
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5869249823975529526, guid: 3b11136cfd0d23540940791a20f3e1de, type: 3}
       propertyPath: m_BlocksRaycasts
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5969353894129159884, guid: 3b11136cfd0d23540940791a20f3e1de, type: 3}
       propertyPath: m_fontAsset
