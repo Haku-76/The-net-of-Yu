@@ -353,14 +353,15 @@ position: 53,23
 村民B: 这......一般是一些老人家，还有“请公婆”？
 郁: 请问您能再具体说说要动什么工吗？
 西装男: 哦，当然，简单来说就是，我需要用你们的一块地来盖一个用来加工海产品的加工厂，你们捕到的鱼我都可以免费帮你们加工，就是需要你们把加工好的产品交给我们来出售，也就是直接卖给我们，我们会按照加工后的价格给你们报酬，这个报酬可比直接把鱼卖了要多得多。
+<<Hide 西装男>>
 
-<<Act 吴阿爷 wu center 0.3 black>>
+<<Act 吴阿爷 wu right 0.3 black>>
 吴阿爷: 这种事情一个人说了不算，大家到投票箱里去投票吧。
 郁: 爷爷！
 吴阿爷: 嗯，天色不早了，大家早些回家，明天晚上前把票递了吧。
 
 <<Scene home-day>>
-<<StopAudio>>
+<<StopAudioAll>>
 郁: 爷爷，您觉得这事......
 吴阿爷: 唉，这售价确实比直接出售要高的多......
 郁: 嗯。
@@ -374,6 +375,10 @@ position: 53,23
 
 <<HideAll>>
 //后续影响剧情
+
+<<Fade black 0.0 1.0 2.0>>
+<<Fade black 1.0 0.0 2.0>>
+
 <<Scene pier>>
 <<Act 陈大叔 chen left 0.4>>
 陈大叔: 回来啦郁。
@@ -383,6 +388,8 @@ position: 53,23
 陈大叔: 郁小妹，有空也可以去看看啊，看起来还真不错哩。
 郁: 好。
 
+<<Fade black 0.0 1.0 2.0>>
+<<Fade black 1.0 0.0 2.0>>
 <<HideAll>>
 <<jump kaiyu>>
 ===
@@ -449,7 +456,7 @@ position: 61,239
 <<Hide 陈大叔>>
 <<Hide 郁>>
 
-<<PlayAudio bustle 0.8 loop>>
+<<PlayAudio bustle 0.3 loop>>
 <<Fade black 0.0 1.0 2.0>>
 <<Fade black 1.0 0.0 2.0>>
 <<Scene show>>
@@ -465,7 +472,8 @@ position: 61,239
 
 <<Act 陈大叔 chen right 0.4 black>>
 <<Act 郁 yu left 0.4 white>>
-<<PlayAudio cheer>>
+<<StopAudioAll>>
+<<PlayAudio cheer 1>>
 陈大叔: 好！
 郁: 好！
 陈大叔: 吃也吃饱了，接下来就要去海边咯。
@@ -475,7 +483,7 @@ position: 61,239
 //<<Act 郁 yu left 0.4 white>>
 //<<Act 陈大叔 chen center 0.4 black>>
 <<Scene yupai>>
-<<StopAudio>>
+<<StopAudioAll>>
 陈大叔: 前面那个人是“请公婆”，代表咱求平安的。
 郁: 好像在说些啥......动作看起来是在撒纸钱......还有倒东西到海里去？
 陈大叔: 那是孝敬龙王的，保佑咱平安丰收。
