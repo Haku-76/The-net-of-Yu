@@ -32,7 +32,7 @@ public class FishingController : MonoBehaviour
         Instance = this;
         //PlayerPrefs.DeleteKey(sceneName + "_hasEntered");
         //PlayerPrefs.Save();
-        if(day.itemHeld == 3)
+        if(day.itemHeld >= 2 && GameActions.jumpPoint == 2)
         {
             SceneManager.LoadScene("Dialogue");
         }

@@ -612,7 +612,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1974749783842263294, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: startNode
-      value: chenTu
+      value: Start
       objectReference: {fileID: 0}
     - target: {fileID: 1974749783842263294, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: startAutomatically
@@ -1028,7 +1028,6 @@ MonoBehaviour:
   dialogueRunner: {fileID: 3484502708253349316}
   coin: {fileID: 11400000, guid: 63a44567240a9be4db431f1fb8fe1e78, type: 2}
   pollution: {fileID: 11400000, guid: cfe28d1489f205d47a700f29cf14e8fd, type: 2}
-  levelLoader: {fileID: 0}
 --- !u!114 &3484502708253349316 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1974749783842263294, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}

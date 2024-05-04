@@ -12,7 +12,7 @@ public class GameActions : MonoBehaviour
     private static int coinNum;
     public Item pollution;
     private static int pollutionNum;
-    private static int jumpPoint;
+    public static int jumpPoint;
     //public GameObject levelLoader;
 
     void Awake()
