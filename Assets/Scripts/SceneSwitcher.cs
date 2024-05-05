@@ -9,6 +9,7 @@ public class SceneSwitcher : MonoBehaviour
     public GameObject levelLoader;
     //public DialogueRunner dialogueRunner;
     private int timeOfDay = 0;
+    //private LevelLoader levelLoader = new LevelLoader();
 
     private void Awake()
     {
