@@ -197,7 +197,7 @@ position: -291,-489
     <<Scene food>>
     <<Hide 郁>>
     <<Hide 安阿姨>>
-    <<wait 2>>
+    <<wait 1>>
     //艇仔粥、鱼生片、紫苏炒田螺、咸鱼腊肉蒸芋头、
     //疍家酒、沙虫、盘糕（疍家糕）、鱼露、鱼虾酱、鱼虾糟、
     //糯米团子、“气鼓鱼”粥、猪脚姜、疍家菜粽、酸梅鸭、煎鱼饼、椰香鱿鱼...
@@ -301,13 +301,13 @@ position: -286,19
 // -> 可以帮我加工一下吗？
 -> 我的船<<if $hasVisitedChenOption2 == false>>
     陈大叔: 选好日子了吗，都准备好了咱简单祭拜一下，就可以“起龙头安龙骨”了。
-    是否支付（600）金币
+    是否支付（200）金币
     <<set $money to checkCoin()>>
         ->否
             <<HideAll>>
             <<jump chenTu>>
             <<NextScene DialogueCanvas MainMenu>>
-        ->是<<if checkCoin() >= 600>>
+        ->是<<if checkCoin() >= 200>>
             <<BuyShip DialogueCanvas>>
             陈大叔: 恭喜啊孩子，有自己的船了，正好赶上开渔节一起庆祝吧哈哈哈！
             <<Fade black 0.0 1.0 2.0>>

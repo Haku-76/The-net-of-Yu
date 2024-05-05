@@ -33,6 +33,11 @@ public class BookPro : MonoBehaviour
     /// </summary>
     public UnityEvent OnFlip;
 
+    private void OnEnable()
+    {
+        SoundManager.Instance.PlaySE(SESoundData.SE.Button);
+    }
+
     /// <summary>
     /// The Current Shown paper (the paper its front shown in right part)
     /// </summary>

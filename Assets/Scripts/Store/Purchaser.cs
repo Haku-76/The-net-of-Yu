@@ -16,6 +16,7 @@ public class Purchaser : MonoBehaviour
             Debug.Log("Purchased: " + item.name);
             if (!playerInventory.itemList.Contains(item) && item.cost != "已拥有")
             {
+                SoundManager.Instance.PlaySE(SESoundData.SE.Sold);
                 playerInventory.itemList.Add(item);
                 item.itemHeld += 1;
                 item.cost = "已拥有";

@@ -23,6 +23,7 @@ public class GameActions : MonoBehaviour
     private void Start()
     {
         print("itemHeld" + coin.itemHeld);
+        SoundManager.Instance.VolumChangeBGM(0.5f);
     }
 
     private void AdjustCoin(int changeValue)

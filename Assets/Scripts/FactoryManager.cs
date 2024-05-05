@@ -140,6 +140,7 @@ public class FactoryManager : MonoBehaviour
 
     public void Seller()
     {
+        SoundManager.Instance.PlaySE(SESoundData.SE.Sold);
         coinGet = fishOneSell * int.Parse(fishOne.cost) + fishTwoSell * int.Parse(fishTwo.cost) + fishThreeSell * int.Parse(fishThree.cost) +
                   fishFourSell * int.Parse(fishFour.cost) + fishFiveSell * int.Parse(fishFive.cost);
         coin.itemHeld += coinGet;

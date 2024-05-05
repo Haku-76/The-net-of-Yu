@@ -32,7 +32,7 @@ public class FishingController : MonoBehaviour
         Instance = this;
         //PlayerPrefs.DeleteKey(sceneName + "_hasEntered");
         //PlayerPrefs.Save();
-        if(day.itemHeld >= 2 && GameActions.jumpPoint == 2)
+        if(day.itemHeld >= 5 && GameActions.jumpPoint == 2)
         {
             SceneManager.LoadScene("Dialogue");
         }
@@ -93,6 +93,7 @@ public class FishingController : MonoBehaviour
         else
         {
             gameover = true;
+            SoundManager.Instance.PlaySE(SESoundData.SE.FinishedFishing);
             CheckoutPage.SetActive(true);
             day.itemHeld++;
 

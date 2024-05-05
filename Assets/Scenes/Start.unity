@@ -879,7 +879,25 @@ MonoBehaviour:
   - bgm: 0
     audioClip: {fileID: 8300000, guid: a9d400b5ff9195848925f7145f273123, type: 3}
     volume: 1
-  seSoundDatas: []
+  - bgm: 1
+    audioClip: {fileID: 8300000, guid: 816fa47610cbb73488a539b24286a2d7, type: 3}
+    volume: 1
+  seSoundDatas:
+  - se: 0
+    audioClip: {fileID: 8300000, guid: 6078cf6c7d29df9469f4efb6c1c0c1f3, type: 3}
+    volume: 1
+  - se: 1
+    audioClip: {fileID: 8300000, guid: d77d0537dc435b24a962638163501478, type: 3}
+    volume: 1
+  - se: 2
+    audioClip: {fileID: 8300000, guid: fee8fdd335fd1704dbf688fb0d9b1c4d, type: 3}
+    volume: 1
+  - se: 3
+    audioClip: {fileID: 8300000, guid: e0e1c8afd34124f47b0da75ee6ed7bb7, type: 3}
+    volume: 1
+  - se: 4
+    audioClip: {fileID: 8300000, guid: fe86ef2b1a1feda4e8d50316538052b0, type: 3}
+    volume: 1
   bgmMasterVolume: 0
   seMasterVolume: 0
 --- !u!4 &1026921073
@@ -1955,7 +1973,7 @@ MonoBehaviour:
   m_text: "\u9F20\u6807\u70B9\u51FB\u4EFB\u610F\u4F4D\u7F6E"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0c81c20ff29c17e4c8a5fad43f173a59, type: 2}
-  m_sharedMaterial: {fileID: -6819398106852035383, guid: 0c81c20ff29c17e4c8a5fad43f173a59, type: 2}
+  m_sharedMaterial: {fileID: 637844521425562050, guid: 0c81c20ff29c17e4c8a5fad43f173a59, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

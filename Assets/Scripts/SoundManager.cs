@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
@@ -43,10 +44,13 @@ public class SoundManager : MonoBehaviour
 
     public void Update()
     {
-        bgmMasterVolume = BGM_Slider.value;
-        seMasterVolume = SE_Slider.value;
-        bgmAudioSource.volume = bgmMasterVolume;
-        seAudioSource.volume = seMasterVolume;
+        if(SceneManager.GetActiveScene().name == "Start")
+        {
+            bgmMasterVolume = BGM_Slider.value;
+            seMasterVolume = SE_Slider.value;
+            bgmAudioSource.volume = bgmMasterVolume;
+            seAudioSource.volume = seMasterVolume;
+        }
     }
 
     public void PlayBGM(BGMSoundData.BGM bgm)
@@ -54,7 +58,18 @@ public class SoundManager : MonoBehaviour
         BGMSoundData data = bgmSoundDatas.Find(data => data.bgm == bgm);
         bgmAudioSource.clip = data.audioClip;
         bgmAudioSource.volume = bgmMasterVolume;
+        bgmAudioSource.loop = true;
         bgmAudioSource.Play();
+    }
+
+    public void StopBGM()
+    {
+        bgmAudioSource.Stop();
+    }
+
+    public void VolumChangeBGM(float newVolume)
+    {
+        bgmAudioSource.volume = newVolume;
     }
 
     public void PlaySE(SESoundData.SE se)
@@ -72,8 +87,7 @@ public class BGMSoundData
     public enum BGM
     {
         Title,
-        Dungeon,
-        Hoge,
+        HomePage
     }
 
     public BGM bgm;
@@ -87,7 +101,11 @@ public class SESoundData
 {
     public enum SE
     {
-        Attack,
+        Book,
+        Button,
+        Net,
+        Sold,
+        FinishedFishing,
         Damage,
         Hoge,
     }

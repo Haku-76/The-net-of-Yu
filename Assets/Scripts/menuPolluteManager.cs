@@ -33,6 +33,8 @@ public class menuPolluteManager : MonoBehaviour
             levelBg[1].SetActive(false);
             levelBg[2].SetActive(true);
         }
+
+        SoundManager.Instance.PlayBGM(BGMSoundData.BGM.HomePage);
     }
     void Update()
     {

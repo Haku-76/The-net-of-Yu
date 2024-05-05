@@ -89,6 +89,7 @@ public class BoatController : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             attackRange.SetActive(true);
+            SoundManager.Instance.PlaySE(SESoundData.SE.Net);
             if (!isCd) 
             {
                 BulletCharge();

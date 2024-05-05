@@ -10,6 +10,11 @@ public class SceneSwitcher : MonoBehaviour
     //public DialogueRunner dialogueRunner;
     private int timeOfDay = 0;
 
+    private void Awake()
+    {
+        SoundManager.Instance.VolumChangeBGM(1f);
+    }
+
     private void Start()
     {
         levelLoader = GameObject.Find("LevelLoader").gameObject;
