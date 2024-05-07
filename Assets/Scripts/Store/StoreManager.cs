@@ -41,7 +41,7 @@ public class StoreManager : MonoBehaviour
 
     void Start()
     {
-        Initialization();
+        //Initialization();
         Refresh();
     }
 
