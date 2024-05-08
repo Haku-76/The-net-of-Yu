@@ -13,6 +13,7 @@ public class GameActions : MonoBehaviour
     public Item pollution;
     private static int pollutionNum;
     public static int jumpPoint;
+    public Item boat;
     //public GameObject levelLoader;
 
     void Awake()
@@ -22,7 +23,7 @@ public class GameActions : MonoBehaviour
     }
     private void Start()
     {
-        print("itemHeld" + coin.itemHeld);
+        print("coin itemHeld" + coin.itemHeld);
         SoundManager.Instance.VolumChangeBGM(0.5f);
     }
 
@@ -43,7 +44,16 @@ public class GameActions : MonoBehaviour
     public void BuyShip()
     {
         print("已经买了");
-        coin.itemHeld -= 600;
+        //SceneSwitcher.Instance.hasBoughtBoat = true;
+        coin.itemHeld -= 200;
+        boat.itemHeld = 1;
+    }
+
+    [YarnCommand("GetMoney")]
+    public void GetMoney()
+    {
+        print("拿到钱");
+        //coin.itemHeld += 199;
     }
 
     [YarnFunction("checkCoin")]

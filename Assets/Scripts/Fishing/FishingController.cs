@@ -92,13 +92,17 @@ public class FishingController : MonoBehaviour
         }
         else
         {
-            gameover = true;
-            SoundManager.Instance.PlaySE(SESoundData.SE.FinishedFishing);
-            CheckoutPage.SetActive(true);
-            day.itemHeld++;
-
-            CurrentSceneInventoryManager.Instance.GetItemList();
+            Checkout();
         }
     }
 
+    public void Checkout()
+    {
+        gameover = true;
+        SoundManager.Instance.PlaySE(SESoundData.SE.FinishedFishing);
+        CheckoutPage.SetActive(true);
+        day.itemHeld++;
+
+        CurrentSceneInventoryManager.Instance.GetItemList();
+    }
 }

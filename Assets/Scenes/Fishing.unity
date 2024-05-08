@@ -1045,8 +1045,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Timer
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0c81c20ff29c17e4c8a5fad43f173a59, type: 2}
+  m_sharedMaterial: {fileID: -6819398106852035383, guid: 0c81c20ff29c17e4c8a5fad43f173a59, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1341,7 +1341,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u83B7\u5F97\u9C7C\u7C7B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9e41ab62b1bc05b4f9a685f90a224d99, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0c81c20ff29c17e4c8a5fad43f173a59, type: 2}
   m_sharedMaterial: {fileID: 2200132102344065627, guid: 9e41ab62b1bc05b4f9a685f90a224d99, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1405,7 +1405,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &726567208
@@ -2220,8 +2220,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1096429721}
         m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+        m_MethodName: FishingSceneBack
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2448,8 +2448,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u8FD4\u56DE\u4E3B\u83DC\u5355"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0c81c20ff29c17e4c8a5fad43f173a59, type: 2}
+  m_sharedMaterial: {fileID: -6819398106852035383, guid: 0c81c20ff29c17e4c8a5fad43f173a59, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2867,7 +2867,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u83B7\u5F97\u8D44\u6E90"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9e41ab62b1bc05b4f9a685f90a224d99, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0c81c20ff29c17e4c8a5fad43f173a59, type: 2}
   m_sharedMaterial: {fileID: 2200132102344065627, guid: 9e41ab62b1bc05b4f9a685f90a224d99, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2931,7 +2931,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1409657530

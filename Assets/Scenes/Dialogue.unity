@@ -513,7 +513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9222825395440628290, guid: 87213229d6b65024d8def84e76427b0b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -645,7 +645,7 @@ PrefabInstance:
     - target: {fileID: 2682155763410027250, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: fcf78545b00c2dd4c89bd7bd5a4e42c2, type: 2}
+      objectReference: {fileID: 11400000, guid: 0c81c20ff29c17e4c8a5fad43f173a59, type: 2}
     - target: {fileID: 2883355632282176679, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_Name
       value: DialogueCanvas
@@ -852,19 +852,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3653700145746141703, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1012.1625
+      value: 1018.0151
       objectReference: {fileID: 0}
     - target: {fileID: 3653700145746141703, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100.63562
+      value: 151.976
       objectReference: {fileID: 0}
     - target: {fileID: 3653700145746141703, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -15.9205
       objectReference: {fileID: 0}
     - target: {fileID: 3653700145746141703, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 1.4533
       objectReference: {fileID: 0}
     - target: {fileID: 3653874632904890355, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_IsActive
@@ -873,6 +873,10 @@ PrefabInstance:
     - target: {fileID: 3736784536379170602, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943031000947819471, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: m_fontSize
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 4943031000947819471, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_fontAsset
@@ -891,9 +895,13 @@ PrefabInstance:
       value: 0.25490198
       objectReference: {fileID: 0}
     - target: {fileID: 4943031000947819471, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943031000947819471, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 637844521425562050, guid: 0c81c20ff29c17e4c8a5fad43f173a59, type: 2}
+      objectReference: {fileID: -6819398106852035383, guid: 0c81c20ff29c17e4c8a5fad43f173a59, type: 2}
     - target: {fileID: 4943031000947819471, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4281416769
@@ -1007,6 +1015,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2883355632282176679, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3484502708253349315}
+    - targetCorrespondingSourceObject: {fileID: 2883355632282176679, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3484502708253349317}
   m_SourcePrefab: {fileID: 100100000, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
 --- !u!1 &3484502708253349314 stripped
 GameObject:
@@ -1028,6 +1039,7 @@ MonoBehaviour:
   dialogueRunner: {fileID: 3484502708253349316}
   coin: {fileID: 11400000, guid: 63a44567240a9be4db431f1fb8fe1e78, type: 2}
   pollution: {fileID: 11400000, guid: cfe28d1489f205d47a700f29cf14e8fd, type: 2}
+  boat: {fileID: 11400000, guid: bd8e45018dd57764f8ad5eb4649582d2, type: 2}
 --- !u!114 &3484502708253349316 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1974749783842263294, guid: 9e0841b82a4ebcd438730d23886e17e6, type: 3}
@@ -1039,6 +1051,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3484502708253349317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3484502708253349314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94b123e653e7f6a4ca81401810bd86fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasBoughtBoat: {fileID: 11400000, guid: bd8e45018dd57764f8ad5eb4649582d2, type: 2}
+  levelLoader: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

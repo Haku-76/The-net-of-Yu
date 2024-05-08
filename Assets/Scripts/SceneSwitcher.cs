@@ -5,7 +5,8 @@ using Yarn.Unity;
 
 public class SceneSwitcher : MonoBehaviour
 {
-    public bool hasBoughtBoat = false;
+    public static SceneSwitcher Instance { get; private set; }
+    public Item hasBoughtBoat;
     public GameObject levelLoader;
     //public DialogueRunner dialogueRunner;
     private int timeOfDay = 0;
@@ -22,13 +23,20 @@ public class SceneSwitcher : MonoBehaviour
     }
     public void LoadScene(string sceneName)
     {
-        StartCoroutine(levelLoader.GetComponent<LevelLoader>().LoadLevel(sceneName));
+        if(levelLoader != null)
+        {
+            StartCoroutine(levelLoader.GetComponent<LevelLoader>().LoadLevel(sceneName));
+        }
+        else
+        {
+            SceneManager.LoadScene(sceneName);
+        }
         UpdateTime();
     }
 
     public void StoreScene()
     {
-        if (!hasBoughtBoat)
+        if (hasBoughtBoat.itemHeld == 0)
         {
             SceneManager.LoadScene("Dialogue");
         }
@@ -36,6 +44,18 @@ public class SceneSwitcher : MonoBehaviour
         {
             SceneManager.LoadScene("Store");
         }
+    }
+
+    public void StartFishingSceneBack()
+    {
+        
+    }
+
+
+    public void FishingSceneBack()
+    {
+
+        FishingController.Instance.Checkout();
     }
 
     public void UpdateTime()

@@ -89,7 +89,6 @@ public class BoatController : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             attackRange.SetActive(true);
-            SoundManager.Instance.PlaySE(SESoundData.SE.Net);
             if (!isCd) 
             {
                 BulletCharge();
@@ -114,6 +113,7 @@ public class BoatController : MonoBehaviour
         else if (Input.GetMouseButtonUp(0))
         {
             GameObject temp = GameObject.Instantiate(Bullet, firePos.position, firePos.rotation);
+            SoundManager.Instance.PlaySE(SESoundData.SE.Net);
             if (downTimer > downTime)
             {
                 downTimer = 0.8f;

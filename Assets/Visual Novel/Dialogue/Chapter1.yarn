@@ -103,6 +103,12 @@ position: -230,-1019
 
 吴阿爷: 过好你自己的生活就好，你过的开心，爷爷就放心了......
 
+吴阿爷: 这是一点心意，你先自己拿好啊，拿它买点自己喜欢的东西。
+
+（获得200块钱）
+
+<<GetMoney DialogueCanvas>>
+
 吴阿爷: 我相信你一定有很多疑惑想问我吧。现在也是时候了，问吧，孩子。
 
 郁: .....您知道，我的父母到哪里去了吗......
@@ -367,11 +373,11 @@ position: 53,23
 郁: 嗯。
 你决定对开加工厂这件事表示：
 -> 赞成
-    <<addPollution DialogueCanvas 3>>
+    //<<addPollution DialogueCanvas 3>>
 -> 反对
-    <<addPollution DialogueCanvas -1>>
+    //<<addPollution DialogueCanvas -1>>
 -> 弃权
-    <<addPolution DialogueCanvas 1>>
+    //<<addPolution DialogueCanvas 1>>
 
 <<HideAll>>
 //后续影响剧情

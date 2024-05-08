@@ -19,7 +19,7 @@ public class LevelLoader : MonoBehaviour
 
     public IEnumerator LoadLevel(string sceneName)
     {
-        SoundManager.Instance.VolumChangeBGM(0f);
+        //SoundManager.Instance.VolumChangeBGM(0f);
         SoundManager.Instance.PlaySE(SESoundData.SE.Button);
         
         this.GetComponent<Animator>().SetTrigger("Start");
