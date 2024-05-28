@@ -18,7 +18,7 @@ public class Item : ScriptableObject
     public float velocity;
 
     public bool hasGet;
-    public ItemClass itemClass;
+    public ItemClass itemClass = ItemClass.Else;
     public Sprite bookSpr;
     public Item TurnToSO;
     public int needPolluteValue;
@@ -27,6 +27,7 @@ public class Item : ScriptableObject
 }
 public enum ItemClass
 {
+    Else,
     Fish,
     Garbage,
     Resource

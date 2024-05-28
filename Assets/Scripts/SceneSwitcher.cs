@@ -14,11 +14,11 @@ public class SceneSwitcher : MonoBehaviour
 
     private void Awake()
     {
-        SoundManager.Instance.VolumChangeBGM(1f);
     }
 
     private void Start()
     {
+        SoundManager.Instance.VolumChangeBGM(1f);
         levelLoader = GameObject.Find("LevelLoader").gameObject;
     }
     public void LoadScene(string sceneName)

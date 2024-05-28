@@ -11,8 +11,6 @@ public class CurrentSceneInventoryManager : MonoBehaviour
     public Transform FishMenu;
     public Transform ResourceMenu;
     public GameObject ItemElement;
-    public Inventory FishBag;
-    public Inventory ResourceBag;
     private Sequence BookList;
     public GameObject bookElement;
     [SerializeField]
@@ -66,10 +64,11 @@ public class CurrentSceneInventoryManager : MonoBehaviour
             {
                 case ItemClass.Fish:
                     GameObject.Instantiate(ItemElement, FishMenu).GetComponent<ItemElement>().InitItem(temp.Key.itemImage, temp.Value,0.4f);
-                    FishBag.AddItem(temp.Key, temp.Value);
-                    if (!temp.Key.hasGet)
+                    DataItem itm = DataManager.Instance.GetItemClass(temp.Key.name);
+                    DataManager.Instance.ChangeCount(itm, temp.Value);
+                    if (!itm.hasGet)
                     {
-                        temp.Key.hasGet = true;
+                        DataManager.Instance.ChangeGetState(itm, true);
                         if (temp.Key.isPollted)
                         {
                             continue;
@@ -92,7 +91,7 @@ public class CurrentSceneInventoryManager : MonoBehaviour
                     break;
                 case ItemClass.Resource:
                     GameObject.Instantiate(ItemElement, ResourceMenu).GetComponent<ItemElement>().InitItem(temp.Key.itemImage, temp.Value,0.22f);
-                    ResourceBag.AddItem(temp.Key, temp.Value);
+                    DataManager.Instance.ChangeCount(DataManager.Instance.GetItemClass(temp.Key.name), temp.Value);
                     break;
             }
         }

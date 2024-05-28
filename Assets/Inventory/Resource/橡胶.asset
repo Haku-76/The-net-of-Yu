@@ -22,7 +22,7 @@ MonoBehaviour:
   efficiency: 0
   velocity: 0
   hasGet: 0
-  itemClass: 2
+  itemClass: 3
   bookSpr: {fileID: 0}
   TurnToSO: {fileID: 0}
   needPolluteValue: 0

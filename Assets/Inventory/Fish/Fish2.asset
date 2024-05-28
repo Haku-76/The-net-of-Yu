@@ -22,7 +22,7 @@ MonoBehaviour:
   efficiency: 0
   velocity: 0
   hasGet: 0
-  itemClass: 0
+  itemClass: 1
   bookSpr: {fileID: 21300000, guid: eb67c72c269ea3544b58b8e70d97e156, type: 3}
   TurnToSO: {fileID: 0}
   needPolluteValue: 0
